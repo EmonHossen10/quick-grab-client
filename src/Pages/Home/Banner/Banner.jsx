@@ -28,7 +28,7 @@ const Banner = () => {
       }}
       navigation={true}
       modules={[Pagination, Navigation]}
-      className="mySwiper"
+      className="mySwiper "
     >
       <SwiperSlide>
         <img src={img3} alt="" />

@@ -70,9 +70,9 @@ const Navbar = () => {
   );
   return (
     <>
-      <div className="navbar bg-base-100">
+      <div className="navbar fixed z-10 bg-opacity-50   bg-black  text-white">
         <div className="navbar-start">
-          <div className="dropdown">
+          <div className="dropdown ">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -96,10 +96,10 @@ const Navbar = () => {
               {navOptions}
             </ul>
           </div>
-          <a className="btn btn-ghost font-bold  text-2xl">Quick Grab</a>
+          <a className="btn btn-ghost font-bold text-xl lg:text-2xl">Quick Grab</a>
         </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal gap-8 text-[22px]     px-1">
+        <div className="navbar-center hidden lg:flex py-0 lg:py-4 ">
+          <ul className="menu menu-horizontal gap-8 text-[22px] px-1">
             {navOptions}
           </ul>
         </div>
