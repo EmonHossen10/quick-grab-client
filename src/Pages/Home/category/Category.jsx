@@ -16,10 +16,16 @@ import img5 from "../../../../public/asset/home/slide5.jpg";
 import img6 from "../../../../public/asset/home/slide6.jpg";
 import img7 from "../../../../public/asset/home/slide7.jpg";
 import img8 from "../../../../public/asset/home/slide8.jpg";
+import SectionTitle from "../../../Components/SectionTitle";
 
 const Category = () => {
   return (
     <div className="max-w-6xl   mx-auto py-4">
+      
+      <SectionTitle 
+      subHeading="From 10.00 AM to 11.00 PM"
+      heading="Order Online"
+      ></SectionTitle>
       <Swiper
         slidesPerView={3}
         spaceBetween={30}
