@@ -20,11 +20,10 @@ import SectionTitle from "../../../Components/SectionTitle";
 
 const Category = () => {
   return (
-    <div >
-      
-      <SectionTitle 
-      subHeading="From 10.00 AM to 11.00 PM"
-      heading="Order Online"
+    <div>
+      <SectionTitle
+        subHeading="From 10.00 AM to 11.00 PM"
+        heading="Order Online"
       ></SectionTitle>
       <Swiper
         slidesPerView={3}
@@ -37,50 +36,82 @@ const Category = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <img className="h-[500px] w-full" src={img1} alt="" />
-          <h3 className="text-4xl   text-white  opacity-90 uppercase  font-semibold text-center  -mt-20  ">
+          <img
+            className=" h-[300px]   lg:h-[500px] lg:w-full"
+            src={img1}
+            alt=""
+          />
+          <h3 className="lg:text-4xl text-2xl   text-white  opacity-90 uppercase  font-semibold text-center  -mt-20  ">
             Salad
           </h3>
         </SwiperSlide>
         <SwiperSlide>
-          <img className="h-[500px] w-full" src={img2} alt="" />{" "}
-          <h3 className="text-4xl text-white opacity-90 uppercase  font-semibold text-center -mt-20">
+          <img
+            className=" h-[300px]   lg:h-[500px] lg:w-full"
+            src={img2}
+            alt=""
+          />{" "}
+          <h3 className="lg:text-4xl text-2xl text-white opacity-90 uppercase  font-semibold text-center -mt-20">
             pizza
           </h3>
         </SwiperSlide>
         <SwiperSlide>
-          <img className="h-[500px] w-full" src={img3} alt="" />{" "}
-          <h3 className="text-4xl text-white opacity-90 uppercase  font-semibold text-center -mt-20">
+          <img
+            className=" h-[300px]   lg:h-[500px] lg:w-full"
+            src={img3}
+            alt=""
+          />{" "}
+          <h3 className="lg:text-4xl text-2xl text-white opacity-90 uppercase  font-semibold text-center -mt-20">
             Soup
           </h3>
         </SwiperSlide>
         <SwiperSlide>
-          <img className="h-[500px] w-full" src={img4} alt="" />{" "}
-          <h3 className="text-4xl text-white opacity-90 uppercase  font-semibold text-center -mt-20">
+          <img
+            className=" h-[300px]   lg:h-[500px] lg:w-full"
+            src={img4}
+            alt=""
+          />{" "}
+          <h3 className="lg:text-4xl text-2xl text-white opacity-90 uppercase  font-semibold text-center -mt-20">
             cake
           </h3>
         </SwiperSlide>
         <SwiperSlide>
-          <img className="h-[500px] w-full" src={img5} alt="" />
-          <h3 className="text-4xl text-white opacity-90 uppercase  font-semibold text-center -mt-20">
+          <img
+            className=" h-[300px]   lg:h-[500px] lg:w-full"
+            src={img5}
+            alt=""
+          />
+          <h3 className="lg:text-4xl text-2xl text-white opacity-90 uppercase  font-semibold text-center -mt-20">
             burger
           </h3>
         </SwiperSlide>
         <SwiperSlide>
-          <img className="h-[500px] w-full" src={img6} alt="" />
-          <h3 className="text-4xl text-white opacity-90 uppercase  font-semibold text-center -mt-20">
+          <img
+            className=" h-[300px]   lg:h-[500px] lg:w-full"
+            src={img6}
+            alt=""
+          />
+          <h3 className="lg:text-4xl text-2xl text-white opacity-90 uppercase  font-semibold text-center -mt-20">
             Noodles
           </h3>
         </SwiperSlide>
         <SwiperSlide>
-          <img className="h-[500px] w-full" src={img7} alt="" />
-          <h3 className="text-4xl text-white opacity-90 uppercase  font-semibold text-center -mt-20">
+          <img
+            className=" h-[300px]   lg:h-[500px] lg:w-full"
+            src={img7}
+            alt=""
+          />
+          <h3 className="lg:text-4xl text-2xl text-white opacity-90 uppercase  font-semibold text-center -mt-20">
             sushi
           </h3>
         </SwiperSlide>
         <SwiperSlide>
-          <img className="h-[500px] w-full" src={img8} alt="" />
-          <h3 className="text-4xl text-white opacity-90 uppercase  font-semibold text-center -mt-20">
+          <img
+            className=" h-[300px]   lg:h-[500px] lg:w-full"
+            src={img8}
+            alt=""
+          />
+          <h3 className="lg:text-4xl text-2xl text-white opacity-90 uppercase  font-semibold text-center -mt-20">
             ramen
           </h3>
         </SwiperSlide>

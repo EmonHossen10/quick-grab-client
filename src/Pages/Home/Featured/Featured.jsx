@@ -10,20 +10,17 @@ const Featured = () => {
           subHeading={"check it out "}
           heading={"featured items"}
         ></SectionTitle>
-        <section className="flex justify-center items-center bg-slate-500 bg-opacity-60 py-20 px-36 gap-10">
+        <section className="flex flex-col lg:flex-row justify-center items-center bg-slate-600 bg-opacity-80 lg:py-20 lg:px-36 p-5 gap-10 ">
           <div className="flex-1">
             <img src={featuredImg} className="w-[600px]" alt="" />
           </div>
           <div className="flex-1">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores,
-              ut.
+              June 21, 2024
             </p>
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p>WHERE CAN I GET SOME? </p>
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Molestias autem consequuntur neque quia dolore, porro ratione
-              expedita iure sint vero.
+            Welcome to  <span className="text-basic font-semibold text-xl">Quick Grab</span>, where culinary excellence meets delightful ambiance. Enjoy our gourmet dishes, crafted with fresh, locally-sourced ingredients. Experience unforgettable flavors and impeccable service.
             </p>
             <button
               className="btn btn-outline  border-0 border-b-4  text-white
