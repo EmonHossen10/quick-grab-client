@@ -1,7 +1,7 @@
-import Button from "../../../Components/Button";
 import Banner from "../Banner/Banner";
 import ChefRecommendation from "../ChefRecomendation/ChefRecommendation";
 import Featured from "../Featured/Featured";
+import Testimonials from "../Testimonials/Testimonials";
 import Category from "../category/Category";
 import PopularMenu from "../popularMenu/PopularMenu";
 
@@ -14,7 +14,7 @@ const Home = () => {
         <PopularMenu></PopularMenu>
         <ChefRecommendation></ChefRecommendation>
         <Featured></Featured>
-        <Button text="Add to Cart"></Button>
+        <Testimonials></Testimonials>
       </div>
     </div>
   );

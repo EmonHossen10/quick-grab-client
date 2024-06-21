@@ -1,3 +1,5 @@
+import Button from "../../Components/Button";
+
 const CardShare = ({ item }) => {
   const { _id, name, recipe, image, category, price } = item;
   return (
@@ -9,7 +11,7 @@ const CardShare = ({ item }) => {
           <h2 className="  font-bold text-2xl  "> {name}</h2>
           <p> {recipe} </p>
           <div className="card-actions justify-center ">
-            <button className="btn btn-outline  btn-warning ">Buy Now</button>
+             <Button text={"Add To Cart"}></Button>
           </div>
         </div>
       </div>
