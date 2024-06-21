@@ -16,7 +16,7 @@ const Navbar = () => {
         Home
       </NavLink>
       <NavLink
-        to="/about"
+        to="/menu"
         className={({ isActive, isPending }) =>
           isPending
             ? "pending"
@@ -25,7 +25,7 @@ const Navbar = () => {
             : "hover:text-basic hover:underline "
         }
       >
-        About
+       Menu
       </NavLink>
 
       <NavLink

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import Banner from "../Banner/Banner";
 import CallUs from "../CallUs/CallUs";
 import ChefRecommendation from "../ChefRecomendation/ChefRecommendation";
@@ -10,6 +11,10 @@ import PopularMenu from "../popularMenu/PopularMenu";
 const Home = () => {
   return (
     <div>
+
+      <Helmet>
+        <title>Quick Grab | Home</title>
+      </Helmet>
       <Banner></Banner>
       <div className="w-11/12   mx-auto py-4">
         <Category></Category>
