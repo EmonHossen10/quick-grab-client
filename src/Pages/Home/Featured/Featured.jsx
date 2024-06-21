@@ -6,7 +6,7 @@ const Featured = () => {
   return (
     <div className="featured-item bg-fixed text-white pt-8 my-10">
       <div>
-        <SectionTitle  
+        <SectionTitle
           subHeading={"check it out "}
           heading={"featured items"}
         ></SectionTitle>
@@ -25,7 +25,12 @@ const Featured = () => {
               Molestias autem consequuntur neque quia dolore, porro ratione
               expedita iure sint vero.
             </p>
-            <button className="btn btn-outline  border-0 border-b-4    ">CLICK HERE</button>
+            <button
+              className="btn btn-outline  border-0 border-b-4  text-white
+              "
+            >
+              CLICK HERE
+            </button>
           </div>
         </section>
       </div>

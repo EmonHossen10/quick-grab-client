@@ -1,3 +1,4 @@
+import Button from "../../../Components/Button";
 import Banner from "../Banner/Banner";
 import ChefRecommendation from "../ChefRecomendation/ChefRecommendation";
 import Featured from "../Featured/Featured";
@@ -13,6 +14,7 @@ const Home = () => {
         <PopularMenu></PopularMenu>
         <ChefRecommendation></ChefRecommendation>
         <Featured></Featured>
+        <Button text="Add to Cart"></Button>
       </div>
     </div>
   );
