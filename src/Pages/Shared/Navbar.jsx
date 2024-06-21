@@ -29,7 +29,7 @@ const Navbar = () => {
       </NavLink>
 
       <NavLink
-        to="/experience"
+        to="/order"
         className={({ isActive, isPending }) =>
           isPending
             ? "pending"
@@ -38,7 +38,7 @@ const Navbar = () => {
             : "hover:text-basic hover:underline "
         }
       >
-        Experience
+        Order Food
       </NavLink>
 
       <NavLink

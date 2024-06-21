@@ -15,7 +15,6 @@ const Menu = () => {
   const [menu] = useMenus();
 
   const salad = menu.filter((item) => item.category === "salad");
-  const drinks = menu.filter((item) => item.category === "drinks");
   const dessert = menu.filter((item) => item.category === "dessert");
   const pizza = menu.filter((item) => item.category === "pizza");
   const soup = menu.filter((item) => item.category === "salad");
