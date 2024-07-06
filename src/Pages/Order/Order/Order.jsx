@@ -6,10 +6,18 @@ import "react-tabs/style/react-tabs.css";
 import useMenus from "../../../Hooks/useMenus";
 import CardShare from "../../Shared/CardShare";
 import OrderTab from "../OrderTab/OrderTab";
+import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Order = () => {
-  const [tabIndex, setTabindex] = useState(0);
+  const categories = ["salad", "pizza", "soup", "dessert", "drinks"];
+  const { category } = useParams();
+  const initialIndex=categories.indexOf(category);
+//   console.log(category,initialIndex)
+  const [tabIndex, setTabindex] = useState(initialIndex);
   const [menu] = useMenus();
+  //  this params show ,which is in use in route ************
+
   const salad = menu.filter((item) => item.category === "salad");
   const drinks = menu.filter((item) => item.category === "drinks");
   const dessert = menu.filter((item) => item.category === "dessert");
@@ -19,6 +27,9 @@ const Order = () => {
 
   return (
     <div>
+          <Helmet>
+        <title>Quick Grab | Order Food</title>
+      </Helmet>
       <Cover
         img={orderCover}
         title={"our shop"}
@@ -39,7 +50,7 @@ const Order = () => {
             <Tab>Drinks</Tab>
           </TabList>
           <TabPanel>
-            <OrderTab items={salad}></OrderTab>
+            <OrderTab items={salad}></OrderTab> 
           </TabPanel>
           <TabPanel>
             <OrderTab items={pizza}></OrderTab>

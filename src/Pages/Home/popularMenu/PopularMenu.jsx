@@ -17,10 +17,9 @@ const PopularMenu = () => {
 
       <MenuCategory items={popularItems}></MenuCategory>
 
-      <div className="text-center mt-10 mb-4">
-        {" "}
+      {/* <div className="text-center mt-10 mb-4">
         <Button text={"View Full Menu"}></Button>
-      </div>
+      </div> */}
     </section>
   );
 };

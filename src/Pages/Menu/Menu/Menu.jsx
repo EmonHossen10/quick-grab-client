@@ -10,7 +10,7 @@ import dessertImg from "../../../../public/asset/menu/desert.jpg";
 import pizzaImg from "../../../../public/asset/menu/pizza.jpg";
 import saladImg from "../../../../public/asset/menu/salad.jpg";
 import soupImg from "../../../../public/asset/menu/soup.jpg";
-
+ 
 const Menu = () => {
   const [menu] = useMenus();
 
@@ -48,8 +48,9 @@ const Menu = () => {
         description="Indulge in our dessert menu, featuring sweet treats crafted with the finest ingredients. From decadent chocolate lava cakes to refreshing fruit tarts, each dessert is a perfect blend of flavor and artistry. Enjoy classics like creamy cheesecakes and rich tiramisu, or try our seasonal specials. At Quick Grab, our desserts are the perfect ending to your dining experience."
       ></Cover>
       <div className="w-10/12   mx-auto py-4">
-        <MenuCategory items={dessert}></MenuCategory>
+        <MenuCategory title="dessert"  items={dessert}></MenuCategory>
       </div>
+      
 
       {/* pizza */}
       <Cover
@@ -60,7 +61,7 @@ const Menu = () => {
         }
       ></Cover>
       <div className="w-10/12   mx-auto py-4">
-        <MenuCategory items={pizza}></MenuCategory>
+        <MenuCategory title="pizza" items={pizza}></MenuCategory>
       </div>
       {/* salad */}
       <Cover
@@ -71,7 +72,7 @@ const Menu = () => {
         }
       ></Cover>
       <div className="w-10/12   mx-auto py-4">
-        <MenuCategory items={salad}></MenuCategory>
+        <MenuCategory title="salad" items={salad}></MenuCategory>
       </div>
       {/* soups */}
       <Cover
@@ -82,7 +83,7 @@ const Menu = () => {
         }
       ></Cover>
       <div className="w-10/12   mx-auto py-4">
-        <MenuCategory items={soup}></MenuCategory>
+        <MenuCategory title="soup" items={soup}></MenuCategory>
       </div>
     </div>
   );

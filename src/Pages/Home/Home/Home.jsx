@@ -11,19 +11,18 @@ import PopularMenu from "../popularMenu/PopularMenu";
 const Home = () => {
   return (
     <div>
-
       <Helmet>
         <title>Quick Grab | Home</title>
       </Helmet>
       <Banner></Banner>
       <div className="w-11/12   mx-auto py-4">
-        <Category></Category>
+         <Category></Category>
         <Hero></Hero>
-        <PopularMenu></PopularMenu>
+         <PopularMenu></PopularMenu>
         <CallUs></CallUs>
         <ChefRecommendation></ChefRecommendation>
         <Featured></Featured>
-        <Testimonials></Testimonials>
+        <Testimonials></Testimonials>  
       </div>
     </div>
   );
