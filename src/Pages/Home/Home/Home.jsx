@@ -23,6 +23,7 @@ const Home = () => {
         <ChefRecommendation></ChefRecommendation>
         <Featured></Featured>
         <Testimonials></Testimonials>  
+  
       </div>
     </div>
   );
