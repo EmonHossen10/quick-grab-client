@@ -4,7 +4,7 @@ import Cover from "../../Shared/Cover";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import useMenus from "../../../Hooks/useMenus";
-import CardShare from "../../Shared/CardShare";
+ 
 import OrderTab from "../OrderTab/OrderTab";
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
