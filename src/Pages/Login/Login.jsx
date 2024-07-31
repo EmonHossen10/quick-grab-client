@@ -93,13 +93,16 @@ const Login = () => {
               <input
                 type="text"
                 name="captcha"
-                placeholder="Type the text above"
+                placeholder="Type the captcha above"
                 className="input input-bordered focus:border-basic focus:border-[1px]  focus:ring-basic focus:ring-[1px] focus:outline-none"
                 required
               />
             </div>
+            <button className="btn btn-outline btn-info   btn-xs">
+              VALIDATE
+            </button>
 
-            <div className="form-control mt-6">
+            <div className="form-control transform transition-transform duration-400 ease-in-out hover:scale-105 mt-6">
               <LogButton text="Login"></LogButton>
             </div>
           </form>
