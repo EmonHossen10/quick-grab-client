@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import login from "../../../public/asset/login.jpg";
 import loginBG from "../../../public/asset/loginBG.jpg";
@@ -10,8 +10,12 @@ import {
   validateCaptcha,
 } from "react-simple-captcha";
 
+import toast, { Toaster } from "react-hot-toast";
+
 const Login = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
+  const [disable, setDisable] = useState(true);
+  const captchaRef = useRef(null);
 
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
@@ -21,6 +25,16 @@ const Login = () => {
   useEffect(() => {
     loadCaptchaEnginge(6);
   }, []);
+  const handleValidateCaptcha = () => {
+    const user_captcha_value = captchaRef.current.value;
+    console.log(user_captcha_value);
+    if (validateCaptcha(user_captcha_value)) {
+      toast.success("Captcha is validate");
+      setDisable(false);
+    } else {
+      toast.error("Captcha is Invalid");
+    }
+  };
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -91,6 +105,7 @@ const Login = () => {
                 <LoadCanvasTemplate />
               </label>
               <input
+                ref={captchaRef}
                 type="text"
                 name="captcha"
                 placeholder="Type the captcha above"
@@ -98,16 +113,31 @@ const Login = () => {
                 required
               />
             </div>
-            <button className="btn btn-outline btn-info   btn-xs">
+            <button
+              onClick={handleValidateCaptcha}
+              className="btn btn-outline btn-info mt-1  btn-xs"
+            >
               VALIDATE
             </button>
 
-            <div className="form-control transform transition-transform duration-400 ease-in-out hover:scale-105 mt-6">
-              <LogButton text="Login"></LogButton>
+            <div className="form-control mt-6">
+              <input
+                disabled={disable}
+                type="submit"
+                className={`px-10 text-xl w-full py-3 rounded-md text-white shadow-xl 
+                  ${
+                    disable
+                      ? "bg-gray-400 cursor-not-allowed" // Disabled state styles
+                      : "bg-basic transition-transform duration-400 ease-in-out transform hover:scale-105 hover:bg-[#e25802]"
+                  }
+                `}
+                value="Login"
+              />
             </div>
           </form>
         </div>
       </div>
+      <Toaster />
     </div>
   );
 };
