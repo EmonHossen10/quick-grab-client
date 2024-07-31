@@ -2,11 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import login from "../../../public/asset/login.jpg";
 import loginBG from "../../../public/asset/loginBG.jpg";
-import LogButton from "../../Components/LogButton";
+
 import {
   loadCaptchaEnginge,
   LoadCanvasTemplate,
-  LoadCanvasTemplateNoReload,
   validateCaptcha,
 } from "react-simple-captcha";
 
