@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import login from "../../../public/asset/login.jpg";
 import loginBG from "../../../public/asset/loginBG.jpg";
@@ -10,8 +10,12 @@ import {
 } from "react-simple-captcha";
 
 import toast, { Toaster } from "react-hot-toast";
+import { AuthContext } from "../../providers/AuthProvider";
+import { Link } from "react-router-dom";
 
 const Login = () => {
+  const { signIn } = useContext(AuthContext);
+
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [disable, setDisable] = useState(true);
   const captchaRef = useRef(null);
@@ -35,12 +39,23 @@ const Login = () => {
     }
   };
 
+  // here main authentication
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
+
+    signIn(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        console.log(errorMessage);
+      });
   };
   return (
     <div
@@ -56,8 +71,8 @@ const Login = () => {
           <img src={login} alt="" />
         </div>
         <div className="card bg-base-100 first: lg:w-1/2 shadow-2xl">
-          <div className="flex justify-center border-b-4 w-6/12 items-center mx-auto pb-3 border-basic rounded-lg">
-            <h1 className="text-4xl  px-5 pt-5 font-bold">Login</h1>
+          <div className="flex justify-center border-b-4 w-5/12 items-center mx-auto pb-3 border-basic rounded-lg">
+            <h1 className="text-3xl  px-5 pt-5 font-bold">Login</h1>
           </div>
           <form onSubmit={handleLogin} className="card-body">
             <div className="form-control">
@@ -132,6 +147,14 @@ const Login = () => {
                 `}
                 value="Login"
               />
+            </div>
+            <div className=" ">
+              <small>
+                New Here ?{" "}
+                <span className="text-red-500 hover:font-bold hover:underline">
+                  <Link to={"/sign-up"}> Create an account </Link>
+                </span>
+              </small>
             </div>
           </form>
         </div>
