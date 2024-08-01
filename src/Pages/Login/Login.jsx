@@ -12,6 +12,7 @@ import {
 import toast, { Toaster } from "react-hot-toast";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
@@ -50,14 +51,21 @@ const Login = () => {
     signIn(email, password)
       .then((result) => {
         const user = result.user;
+        alert("login success")
         console.log(user);
       })
       .catch((error) => {
         const errorMessage = error.message;
         console.log(errorMessage);
+        alert("error here")
+
       });
   };
   return (
+    <>
+      <Helmet>
+        <title>Quick Grab | Login</title>
+    </Helmet>
     <div
       style={{
         backgroundImage: `url(${loginBG})`,
@@ -161,6 +169,7 @@ const Login = () => {
       </div>
       <Toaster />
     </div>
+    </>
   );
 };
 

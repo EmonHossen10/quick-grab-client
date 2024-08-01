@@ -1,7 +1,19 @@
 import { Link, NavLink } from "react-router-dom";
- 
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogout = () => {
+    logOut()
+      .then(() => {
+        alert("Logout success");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
   const navOptions = (
     <>
       <NavLink
@@ -26,7 +38,7 @@ const Navbar = () => {
             : "hover:text-basic hover:underline "
         }
       >
-       Menu
+        Menu
       </NavLink>
 
       <NavLink
@@ -97,16 +109,32 @@ const Navbar = () => {
               {navOptions}
             </ul>
           </div>
-          <Link to='/' className="btn btn-ghost font-bold text-xl lg:text-2xl">Quick Grab</Link>
+          <Link to="/" className="btn btn-ghost font-bold text-xl lg:text-2xl">
+            Quick Grab
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex py-0 lg:py-4 ">
           <ul className="menu menu-horizontal gap-8 text-[22px] px-1">
             {navOptions}
           </ul>
         </div>
-        <div className="navbar-end mr-5 lg:mr-10">
-          <Link to="/login"> <button className="btn btn-warning ">Login</button></Link>
-        </div>
+
+        {user ? (
+          <>
+            <div className="navbar-end mr-5 lg:mr-10">
+              <button onClick={handleLogout} className="btn btn-error ">Logout</button>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="navbar-end mr-5 lg:mr-10">
+              <Link to="/login">
+                {" "}
+                <button className="btn btn-warning ">Login</button>
+              </Link>
+            </div>
+          </>
+        )}
       </div>
     </>
   );
