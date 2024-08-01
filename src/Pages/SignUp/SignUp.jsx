@@ -3,6 +3,7 @@ import signIn from "../../../public/asset/signin.jpg";
 import { Helmet } from "react-helmet";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import toast, { Toaster } from "react-hot-toast";
 
 const SignUp = () => {
   const {
@@ -19,10 +20,13 @@ const SignUp = () => {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
+        toast.success("Successfully Make User ");
       })
       .catch((error) => {
         const errorMessage = error.message;
         console.log(errorMessage);
+        toast.error("User error");
+
       });
   };
 
@@ -126,7 +130,7 @@ const SignUp = () => {
               </div>
             </form>
           </div>
-        </div>
+        </div> <Toaster />
       </div>
     </>
   );
