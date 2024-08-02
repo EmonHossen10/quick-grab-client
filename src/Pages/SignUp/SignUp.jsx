@@ -123,7 +123,7 @@ const SignUp = () => {
               </div>
               <div className="form-control mt-6">
                 <input
-                  className="px-10 text-xl w-full py-3 bg-basic rounded-md text-white transition-all ease-in duration-200 shadow-xl hover:bg-[#e25802] hover:scale-105 transform"
+                  className="px-10 text-xl w-full py-3 bg-basic rounded-md text-white transition-all ease-in duration-200 shadow-xl hover:bg-[#e25802] hover:scale-105 transform cursor-pointer"
                   type="submit"
                   value="Sign Up"
                 />
