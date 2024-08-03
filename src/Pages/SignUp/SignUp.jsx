@@ -117,7 +117,7 @@ const SignUp = () => {
 
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover">
-                    Forgot password?
+                    Forgot password??
                   </a>
                 </label>
               </div>
