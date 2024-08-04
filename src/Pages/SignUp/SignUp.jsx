@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import toast, { Toaster } from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const {
@@ -128,6 +129,14 @@ const SignUp = () => {
                   value="Sign Up"
                 />
               </div>
+              <div className=" ">
+              <small>
+                Already Have An Account ?{" "}
+                <span className="text-red-500 hover:font-bold hover:underline">
+                  <Link to={"/login"}> Login </Link>
+                </span>
+              </small>
+            </div>
             </form>
           </div>
         </div> <Toaster />
