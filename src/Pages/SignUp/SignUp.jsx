@@ -27,7 +27,6 @@ const SignUp = () => {
         const errorMessage = error.message;
         console.log(errorMessage);
         toast.error("User error");
-
       });
   };
 
@@ -43,6 +42,22 @@ const SignUp = () => {
           </div>
           <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Photo URL</span>
+                </label>
+                <input
+                  type="text"
+                  {...register("photoURL", { required: true })}
+                  placeholder="Photo URL"
+                  className="input input-bordered"
+                />
+                {errors.photoURL && (
+                  <span className="text-red-500 font-semibold">
+                    Photo URL is required
+                  </span>
+                )}
+              </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Name</span>
@@ -130,16 +145,17 @@ const SignUp = () => {
                 />
               </div>
               <div className=" ">
-              <small>
-                Already Have An Account ?{" "}
-                <span className="text-red-500 hover:font-bold hover:underline">
-                  <Link to={"/login"}> Login here </Link>
-                </span>
-              </small>
-            </div>
+                <small>
+                  Already Have An Account ?{" "}
+                  <span className="text-red-500 hover:font-bold hover:underline">
+                    <Link to={"/login"}> Login here </Link>
+                  </span>
+                </small>
+              </div>
             </form>
           </div>
-        </div> <Toaster />
+        </div>{" "}
+        <Toaster />
       </div>
     </>
   );
