@@ -80,6 +80,18 @@ const Navbar = () => {
       >
         Contact
       </NavLink>
+      <NavLink
+        to="/secret"
+        className={({ isActive, isPending }) =>
+          isPending
+            ? "pending"
+            : isActive
+            ? "text-basic underline font-semibold  "
+            : "hover:text-basic hover:underline "
+        }
+      >
+        Secret
+      </NavLink>
     </>
   );
   return (
