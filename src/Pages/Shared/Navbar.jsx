@@ -2,6 +2,8 @@ import { Link, NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import toast, { Toaster } from "react-hot-toast";
+import { FaShoppingCart } from "react-icons/fa";
+import { FaRegCircleUser } from "react-icons/fa6";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -92,6 +94,17 @@ const Navbar = () => {
       >
         Secret
       </NavLink>
+
+      <Link to="/">
+        <div className="relative ">
+          <span>
+            <FaShoppingCart className="lg:text-3xl " />
+          </span>
+          <div className="bg-basic absolute -top-2 -right-5  text-white  font-semibold rounded-full   p-1 justify-center flex items-center">
+            <p className=" text-sm ">+0</p>
+          </div>
+        </div>
+      </Link>
     </>
   );
   return (
@@ -135,7 +148,9 @@ const Navbar = () => {
         {user ? (
           <>
             <div className="navbar-end mr-5 lg:mr-10">
-              <p className="mr-4 text-yellow-400 font-bold text-xl">{user?.displayName}</p>
+              <p className="mr-4 text-yellow-400 font-bold text-xl">
+                {user?.displayName}
+              </p>
               <button onClick={handleLogout} className="btn btn-error ">
                 Logout
               </button>
