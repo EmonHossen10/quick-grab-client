@@ -140,6 +140,7 @@ const Login = () => {
 
               <div className="form-control mt-6">
                 <input
+                // make disable
                   disabled={disable}
                   type="submit"
                   className={`px-10 text-xl w-full py-3 rounded-md text-white shadow-xl 

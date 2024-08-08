@@ -5,13 +5,14 @@ import Swal from "sweetalert2";
 import useAuth from "../../Hooks/useAuth";
 import { useLocation, useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
- 
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 const CardShare = ({ item }) => {
   const { name, recipe, image, category, price, _id } = item;
   const { user } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
+  const axiosSecure = useAxiosSecure();
 
   const handleAddToCart = (food) => {
     // console.log(food,user?.email);
@@ -24,7 +25,12 @@ const CardShare = ({ item }) => {
         image,
         price,
       };
-      
+      axiosSecure.post("/carts", cartItem).then((res) => {
+        console.log(res.data);
+        if (res.data.insertedId) {
+          toast.success("item Added to cart successfully");
+        }
+      });
     } else {
       // here adding navigate
       Swal.fire({
