@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import useAuth from "../../Hooks/useAuth";
 import { useLocation, useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
+ 
 
 const CardShare = ({ item }) => {
   const { name, recipe, image, category, price, _id } = item;
@@ -23,6 +24,7 @@ const CardShare = ({ item }) => {
         image,
         price,
       };
+      
     } else {
       // here adding navigate
       Swal.fire({
