@@ -4,17 +4,20 @@ import { Helmet } from "react-helmet";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import toast, { Toaster } from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const {
     register,
+    reset,
     formState: { errors },
     handleSubmit,
   } = useForm();
 
+  const navigate=useNavigate();
+
   //   create user
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
   const onSubmit = (data) => {
     console.log(data);
     createUser(data.email, data.password)
@@ -22,6 +25,17 @@ const SignUp = () => {
         const loggedUser = result.user;
         console.log(loggedUser);
         toast.success("Successfully Make User ");
+        // update profile
+        updateUserProfile(data.name, data.photoURL)
+          .then(() => {
+            console.log("User profile info updated");
+            reset();
+            toast.success("Update user info");
+            navigate("/")
+          })
+          .catch((error) => {
+            console.log(error);
+          });
       })
       .catch((error) => {
         const errorMessage = error.message;
