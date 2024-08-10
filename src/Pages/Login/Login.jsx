@@ -157,7 +157,7 @@ const Login = () => {
                 <small>
                   New Here ?{" "}
                   <span className="text-red-500 hover:font-bold hover:underline">
-                    <Link to={"/sign-up"}> Create an account </Link>
+                    <Link to={"/sign-up"}> Create an account yoo </Link>
                   </span>
                 </small>
               </div>
