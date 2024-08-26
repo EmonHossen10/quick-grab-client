@@ -3,10 +3,12 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import toast, { Toaster } from "react-hot-toast";
 import { FaShoppingCart } from "react-icons/fa";
-import { FaRegCircleUser } from "react-icons/fa6";
+import useCart from "../../Hooks/useCart";
+ 
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [cart]=useCart();
   const handleLogout = () => {
     logOut()
       .then(() => {
@@ -101,7 +103,7 @@ const Navbar = () => {
             <FaShoppingCart className="lg:text-3xl " />
           </span>
           <div className="bg-basic absolute -top-2 -right-5  text-white  font-semibold rounded-full   p-1 justify-center flex items-center">
-            <p className=" text-sm ">+0</p>
+            <p className=" text-sm ">+{cart.length}</p>
           </div>
         </div>
       </Link>

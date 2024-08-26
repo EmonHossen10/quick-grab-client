@@ -6,6 +6,7 @@ import useAuth from "../../Hooks/useAuth";
 import { useLocation, useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import useCart from "../../Hooks/useCart";
 
 const CardShare = ({ item }) => {
   const { name, recipe, image, category, price, _id } = item;
@@ -13,8 +14,9 @@ const CardShare = ({ item }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const axiosSecure = useAxiosSecure();
+  const [, refetch] = useCart();
 
-  const handleAddToCart = (food) => {
+  const handleAddToCart = () => {
     // console.log(food,user?.email);
     if (user && user.email) {
       //send cart to the db
@@ -29,6 +31,8 @@ const CardShare = ({ item }) => {
         console.log(res.data);
         if (res.data.insertedId) {
           toast.success("item Added to cart successfully");
+          // refetch the card
+          refetch()
         }
       });
     } else {
@@ -70,9 +74,7 @@ const CardShare = ({ item }) => {
             </div>
             <div className="card-actions  mt-2  flex justify-center  ">
               <button
-                onClick={() => {
-                  handleAddToCart(item);
-                }}
+                onClick={handleAddToCart}
                 className=" px-10 py-3   border-0 border-b-4 border-b-secondary  hover:bg-secondary rounded-md text-secondary font-bold hover:text-white transition-all ease-in duration-200 shadow-xl "
               >
                 Add To Cart
