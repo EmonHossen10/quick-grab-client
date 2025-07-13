@@ -1,7 +1,6 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import login from "../../../public/asset/login.jpg";
-import loginBG from "../../../public/asset/loginBG.jpg";
+import loginBG4 from "/asset/loginBG4.png";
 
 import {
   loadCaptchaEnginge,
@@ -68,22 +67,23 @@ const Login = () => {
       <Helmet>
         <title>Quick Grab | Login</title>
       </Helmet>
+      
       <div
         style={{
-          backgroundImage: `url(${loginBG})`,
+          backgroundImage: `url(${loginBG4})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
         className="hero bg-base-200  min-h-screen"
       >
-        <div className="hero-content  gap-20     flex-col lg:flex-row ">
-          <div className="text-center lg:text-left">
-            <img src={login} alt="" />
-          </div>
+        
+        <div className="hero-content lg:w-[80%] flex-col  ">
+     
+              <h1 className="text-4xl py-2   font-bold">Login</h1>
+              <p>More than <span className="text-basic font-bold">60+ recipes </span> from around the world</p>
+
           <div className="card bg-base-100 first: lg:w-1/2 shadow-2xl">
-            <div className="flex justify-center border-b-4 w-5/12 items-center mx-auto pb-3 border-basic rounded-lg">
-              <h1 className="text-3xl  px-5 pt-5 font-bold">Login</h1>
-            </div>
+           
             <form onSubmit={handleLogin} className="card-body">
               <div className="form-control">
                 <label className="label">
@@ -140,7 +140,7 @@ const Login = () => {
 
               <div className="form-control mt-6">
                 <input
-                // make disable
+                  // make disable
                   disabled={disable}
                   type="submit"
                   className={`px-10 text-xl w-full py-3 rounded-md text-white shadow-xl 
