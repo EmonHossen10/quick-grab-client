@@ -9,8 +9,8 @@ const ChefRecommendation = () => {
     fetch("./public/files/menu.json")
       .then((res) => res.json())
       .then((data) => {
-        const pizza = data.filter((item) => item.category === "pizza");
-        const firstThree = pizza.slice(0, 3);
+        const dessert = data.filter((item) => item.category === "dessert");
+        const firstThree = dessert.slice(0, 3);
         setReco(firstThree);
       });
   }, []);
