@@ -1,12 +1,15 @@
 import { useForm } from "react-hook-form";
-import signIn from "../../../public/asset/signin.jpg";
+
+import registerPic from "../../../public/asset/registerPic.png";
 import { Helmet } from "react-helmet";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import toast, { Toaster } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const SignUp = () => {
+  const [showPassword, setShowPassword] = useState(false);
   const {
     register,
     reset,
@@ -14,7 +17,7 @@ const SignUp = () => {
     handleSubmit,
   } = useForm();
 
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   //   create user
   const { createUser, updateUserProfile } = useContext(AuthContext);
@@ -31,7 +34,7 @@ const SignUp = () => {
             console.log("User profile info updated");
             reset();
             toast.success("Update user info");
-            navigate("/")
+            navigate("/");
           })
           .catch((error) => {
             console.log(error);
@@ -49,128 +52,153 @@ const SignUp = () => {
       <Helmet>
         <title>Quick Grab | Sign Up</title>
       </Helmet>
-      <div className="hero bg-base-200 min-h-screen">
-        <div className="hero-content flex-col gap-10 lg:flex-row-reverse">
-          <div className="text-center lg:text-left">
-            <img width={600} src={signIn} alt="" />
-          </div>
-          <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-            <form onSubmit={handleSubmit(onSubmit)} className="card-body">
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Photo URL</span>
-                </label>
-                <input
-                  type="text"
-                  {...register("photoURL", { required: true })}
-                  placeholder="Photo URL"
-                  className="input input-bordered"
-                />
-                {errors.photoURL && (
-                  <span className="text-red-500 font-semibold">
-                    Photo URL is required
-                  </span>
-                )}
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Name</span>
-                </label>
-                <input
-                  type="text"
-                  {...register("name", { required: true })}
-                  name="name"
-                  placeholder="Enter Your Name"
-                  className="input input-bordered"
-                />
-                {errors.name && (
-                  <span className="text-red-500 font-semibold">
-                    Name is required
-                  </span>
-                )}
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Email</span>
-                </label>
-                <input
-                  type="email"
-                  {...register("email", { required: true })}
-                  name="email"
-                  placeholder="abc@gmail.com"
-                  className="input input-bordered"
-                />
-                {errors.email && (
-                  <span className="text-red-500 font-semibold">
-                    Email is required
-                  </span>
-                )}
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Password</span>
-                </label>
-                <input
-                  type="password"
-                  {...register("password", {
-                    required: true,
-                    minLength: 6,
-                    maxLength: 20,
-                    pattern:
-                      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/,
-                  })}
-                  name="password"
-                  placeholder="**********"
-                  className="input input-bordered"
-                />
-                {errors.password?.type === "required" && (
-                  <span className="text-red-500 font-semibold">
-                    Password is required
-                  </span>
-                )}
-                {errors.password?.type === "minLength" && (
-                  <span className="text-red-500 font-semibold">
-                    Password Must be 6 character
-                  </span>
-                )}
-                {errors.password?.type === "maxLength" && (
-                  <span className="text-red-500 font-semibold">
-                    Password Must not be higher than 20 character
-                  </span>
-                )}
-                {errors.password?.type === "pattern" && (
-                  <span className="text-red-500 font-semibold">
-                    Password Must have one upperCase,one lowercase, one Number
-                    and one special character
-                  </span>
-                )}
 
-                <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
-                    Forgot password??
-                  </a>
-                </label>
-              </div>
-              <div className="form-control mt-6">
+      <section className="w-full flex flex-col lg:flex-row border border-red-600">
+        <div className="w-full lg:w-1/2   min-h-[300px]">
+          <img src={registerPic} alt="" />
+        </div>
+        <div className="w-full lg:w-1/2   min-h-[300px]">
+          {/* text */}
+
+          <div>
+            <h2 className="text-center md:text-4xl text-2xl py-8 font-bold bg-gradient-to-r from-[#ff416c] to-[#ff4b2b] bg-clip-text text-transparent">
+              Welcome to Quick Grab
+            </h2>
+          </div>
+
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="card-body space-y-4"
+          >
+            <h2 className="md:text-3xl text-xl  text-center font-semibold text-basic">
+              Let's Sign Up !!!
+            </h2>
+            <div className="form-control w-full max-w-md mx-auto">
+              <input
+                type="text"
+                {...register("photoURL", { required: "Photo URL is required" })}
+                placeholder="Enter your Photo URL"
+                className={`input w-full py-3 px-4 rounded-full border ${
+                  errors.photoURL ? "border-red-500" : "border-gray-300"
+                } focus:outline-none focus:ring-2 focus:ring-basic transition duration-200`}
+              />
+
+              {errors.photoURL && (
+                <span className="text-red-500 font-medium mt-1">
+                  {errors.photoURL.message}
+                </span>
+              )}
+            </div>
+
+            <div className="form-control w-full max-w-md mx-auto">
+              <input
+                type="text"
+                {...register("name", { required: "Name is required" })}
+                placeholder="Enter Your Name"
+                className={`w-full px-4 py-3 rounded-full border ${
+                  errors.name ? "border-red-500" : "border-gray-300"
+                } focus:outline-none focus:ring-2 focus:ring-basic transition duration-200`}
+              />
+
+              {errors.name && (
+                <span className="text-red-500 font-medium mt-1">
+                  {errors.name.message}
+                </span>
+              )}
+            </div>
+
+            <div className="form-control w-full max-w-md mx-auto">
+              <input
+                type="email"
+                {...register("email", { required: "Email is required" })}
+                placeholder="abc@gmail.com"
+                className={`w-full px-4 py-3 rounded-full border ${
+                  errors.email ? "border-red-500" : "border-gray-300"
+                } focus:outline-none focus:ring-2 focus:ring-basic transition duration-200`}
+              />
+
+              {errors.email && (
+                <span className="text-red-500 font-medium mt-1">
+                  {errors.email.message}
+                </span>
+              )}
+            </div>
+
+            {/* password */}
+
+            <div className="form-control w-full max-w-md mx-auto">
+              <div className="relative">
                 <input
-                  className="px-10 text-xl w-full py-3 bg-basic rounded-md text-white transition-all ease-in duration-200 shadow-xl hover:bg-[#e25802] hover:scale-105 transform cursor-pointer"
+                  type={showPassword ? "text" : "password"}
+                  {...register("password", {
+                    required: "Password is required",
+                    minLength: {
+                      value: 6,
+                      message: "Password must be at least 6 characters",
+                    },
+                    maxLength: {
+                      value: 20,
+                      message: "Password must not exceed 20 characters",
+                    },
+                    pattern: {
+                      value:
+                        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/,
+                      message:
+                        "Password must have uppercase, lowercase, number & special character",
+                    },
+                  })}
+                  placeholder="**********"
+                  className={`w-full px-4 py-3 rounded-full border ${
+                    errors.password ? "border-red-500" : "border-gray-300"
+                  } focus:outline-none focus:ring-2 focus:ring-basic transition duration-200 pr-10`}
+                />
+
+                {/* Toggle Password Visibility Button */}
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"
+                >
+                  {showPassword ? <FaEyeSlash /> : <FaEye />}
+                </button>
+              </div>
+
+              {/* Error Messages */}
+              {errors.password && (
+                <span className="text-red-500 font-medium mt-1">
+                  {errors.password.message}
+                </span>
+              )}
+
+              {/* Forgot Password Link */}
+              <label className="label">
+                <a href="#" className="label-text-alt link link-hover text-sm">
+                  Forgot password?
+                </a>
+              </label>
+            </div>
+
+            <div className="form-control mt-6 flex  items-center">
+                <input
+                  className="px-10 text-xl  md:w-[85%] w-full py-3 bg-basic rounded-md text-white transition-all ease-in duration-200 shadow-xl hover:bg-[#e25802] hover:scale-105 transform cursor-pointer"
                   type="submit"
                   value="Sign Up"
                 />
               </div>
-              <div className=" ">
-                <small>
-                  Already Have An Account ?{" "}
-                  <span className="text-red-500 hover:font-bold hover:underline">
-                    <Link to={"/login"}> Login here </Link>
-                  </span>
-                </small>
-              </div>
-            </form>
-          </div>
-        </div>{" "}
-        <Toaster />
-      </div>
+
+            <div className="md:pl-12 ">
+              <small>
+                Already Have An Account ?{" "}
+                <span className="text-red-500 hover:font-bold hover:underline">
+                  <Link to={"/login"}> Login here </Link>
+                </span>
+              </small>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <Toaster />
     </>
   );
 };
