@@ -4,11 +4,11 @@ import { AuthContext } from "../../providers/AuthProvider";
 import toast, { Toaster } from "react-hot-toast";
 import { FaShoppingCart } from "react-icons/fa";
 import useCart from "../../Hooks/useCart";
- 
+import logo from "../../../public/asset/logo2.png"; // Assuming you have a logo image
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-  const [cart]=useCart();
+  const [cart] = useCart();
   const handleLogout = () => {
     logOut()
       .then(() => {
@@ -138,7 +138,7 @@ const Navbar = () => {
             </ul>
           </div>
           <Link to="/" className="btn btn-ghost font-bold text-xl lg:text-2xl">
-            Quick Grab
+            Qu!ck Grab
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex py-0 lg:py-4 ">
@@ -162,8 +162,13 @@ const Navbar = () => {
           <>
             <div className="navbar-end mr-5 lg:mr-10">
               <Link to="/login">
-                {" "}
-                <button className="btn btn-warning ">Login</button>
+                <button
+                  className="bg-basic py-3 w-40 text-xl font-bold rounded-full 
+                       transition-all duration-300 ease-in-out 
+                       hover:bg-[#e25802] hover:scale-105"
+                >
+                  Login
+                </button>
               </Link>
             </div>
           </>

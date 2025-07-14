@@ -170,7 +170,7 @@ const Login = () => {
                   // make disable
                   disabled={disable}
                   type="submit"
-                  className={`px-10 text-xl w-full py-3 rounded-md text-white shadow-xl 
+                  className={`px-10 text-xl w-full py-3 rounded-full mb-1 text-white shadow-xl 
                   ${
                     disable
                       ? "bg-gray-400 cursor-not-allowed"

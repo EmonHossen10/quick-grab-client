@@ -179,12 +179,12 @@ const SignUp = () => {
             </div>
 
             <div className="form-control mt-6 flex  items-center">
-                <input
-                  className="px-10 text-xl  md:w-[85%] w-full py-3 bg-basic rounded-md text-white transition-all ease-in duration-200 shadow-xl hover:bg-[#e25802] hover:scale-105 transform cursor-pointer"
-                  type="submit"
-                  value="Sign Up"
-                />
-              </div>
+              <input
+                className="px-10 text-xl  md:w-[85%] w-full rounded-full py-3 bg-basic   text-white transition-all ease-in duration-200 shadow-xl hover:bg-[#e25802] hover:scale-105 transform cursor-pointer"
+                type="submit"
+                value="Sign Up"
+              />
+            </div>
 
             <div className="md:pl-12 ">
               <small>
