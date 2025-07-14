@@ -1,6 +1,15 @@
 import { useContext, useEffect, useRef, useState } from "react";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
-import loginBG4 from "/asset/loginBG4.png";
+import {
+  FaEnvelope,
+  FaEye,
+  FaEyeSlash,
+  FaGithub,
+  FaGoogle,
+  FaLock,
+  FaShieldAlt,
+} from "react-icons/fa";
+
+import loginBG5 from "/asset/loginBG5.png";
 
 import {
   loadCaptchaEnginge,
@@ -67,53 +76,62 @@ const Login = () => {
       <Helmet>
         <title>Quick Grab | Login</title>
       </Helmet>
-      
+
       <div
         style={{
-          backgroundImage: `url(${loginBG4})`,
+          backgroundImage: `url(${loginBG5})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
         className="hero bg-base-200  min-h-screen"
       >
-        
         <div className="hero-content lg:w-[80%] flex-col  ">
-     
-              <h1 className="text-4xl py-2   font-bold">Login</h1>
-              <p>More than <span className="text-basic font-bold">60+ recipes </span> from around the world</p>
+          <h1 className="text-4xl py-2   font-bold">Login</h1>
+          <p className="text-sm">
+            More than <span className="text-basic font-bold">60+ recipes </span>{" "}
+            from around the world
+          </p>
 
-          <div className="card bg-base-100 first: lg:w-1/2 shadow-2xl">
-           
-            <form onSubmit={handleLogin} className="card-body">
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Email</span>
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="email"
-                  className="input input-bordered  focus:border-basic focus:border-[1px]  focus:ring-basic focus:ring-[1px] focus:outline-none"
-                  required
-                />
+          <div className=" md:w-[40%] w-[90%] mx-auto bg-white shadow-2xl">
+            <form onSubmit={handleLogin} className="p-10 ">
+              <div className="form-control pb-4 w-full max-w-md mx-auto">
+                <div className="relative">
+                  <span className="absolute inset-y-0 left-0 pl-4 flex items-center text-gray-500">
+                    <FaEnvelope />
+                  </span>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter Email Address"
+                    className="w-full pl-12 pr-4 py-3 rounded-full border border-gray-300 focus:outline-none focus:border-basic transition duration-200"
+                    required
+                  />
+                </div>
               </div>
 
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Password</span>
-                </label>
+              {/* new password */}
+
+              <div className="form-control w-full max-w-md mx-auto">
                 <div className="relative">
+                  {/* Left Icon */}
+                  <span className="absolute inset-y-0 left-0 pl-4 flex items-center text-gray-500">
+                    <FaLock />
+                  </span>
+
+                  {/* Password Input */}
                   <input
                     type={passwordVisible ? "text" : "password"}
                     name="password"
-                    placeholder="password"
-                    className="input input-bordered w-full pr-10 focus:border-basic focus:border-[1px]  focus:ring-basic focus:ring-[1px] focus:outline-none  "
+                    placeholder="Enter Your Password"
+                    className="w-full pl-12 pr-10 py-3 rounded-full border border-gray-300 focus:outline-none focus:border-basic transition duration-200"
                     required
                   />
+
+                  {/* Toggle Button */}
                   <button
                     onClick={togglePasswordVisibility}
                     className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-500"
-                    type="button" // To prevent form submission on click
+                    type="button"
                   >
                     {passwordVisible ? (
                       <FaEyeSlash size={20} />
@@ -123,19 +141,28 @@ const Login = () => {
                   </button>
                 </div>
               </div>
-              {/* captcha */}
-              <div className="form-control">
+
+              {/* new captcha */}
+              <div className="form-control w-full max-w-md mx-auto">
                 <label className="label">
                   <LoadCanvasTemplate />
                 </label>
-                <input
-                  onBlur={handleValidateCaptcha}
-                  type="text"
-                  name="captcha"
-                  placeholder="Type the captcha above"
-                  className="input input-bordered focus:border-basic focus:border-[1px]  focus:ring-basic focus:ring-[1px] focus:outline-none"
-                  required
-                />
+                <div className="relative">
+                  {/* Left Icon */}
+                  <span className="absolute inset-y-0 left-0 pl-4 flex items-center text-gray-500">
+                    <FaShieldAlt />
+                  </span>
+
+                  {/* Captcha Input */}
+                  <input
+                    onBlur={handleValidateCaptcha}
+                    type="text"
+                    name="captcha"
+                    placeholder="Type the captcha above"
+                    className="w-full pl-12 pr-4 py-3 rounded-full border border-gray-300 focus:outline-none focus:border-basic transition duration-200"
+                    required
+                  />
+                </div>
               </div>
 
               <div className="form-control mt-6">
@@ -157,9 +184,38 @@ const Login = () => {
                 <small>
                   New Here ?{" "}
                   <span className="text-red-500 hover:font-bold hover:underline">
-                    <Link to={"/sign-up"}> Create an account yoo </Link>
+                    <Link to={"/sign-up"}> Create an account</Link>
                   </span>
                 </small>
+              </div>
+
+              <div className="flex items-center justify-center gap-4 my-6">
+                <div className="flex-grow h-px bg-gray-300"></div>
+                <span className="text-sm text-gray-500 whitespace-nowrap">
+                  Login With Social
+                </span>
+                <div className="flex-grow h-px bg-gray-300"></div>
+              </div>
+
+              {/* social login */}
+              <div className="flex flex-row justify-center gap-4 mt-6">
+                {/* Google Login */}
+                <button
+                  type="button"
+                  className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-full hover:bg-gray-100 transition"
+                >
+                  <FaGoogle className="text-[#4285F4]" />{" "}
+                  {/* Google's official blue */}
+                </button>
+
+                {/* GitHub Login */}
+                <button
+                  type="button"
+                  className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-full hover:bg-gray-100 transition"
+                >
+                  <FaGithub className="text-[#171515]" />{" "}
+                  {/* GitHub's official dark color */}
+                </button>
               </div>
             </form>
           </div>
