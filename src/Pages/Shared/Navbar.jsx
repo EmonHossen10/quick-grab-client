@@ -100,9 +100,9 @@ const Navbar = () => {
       <Link to="/">
         <div className="relative ">
           <span>
-            <FaShoppingCart className="lg:text-3xl " />
+            <FaShoppingCart className="text-2xl" />
           </span>
-          <div className="bg-basic absolute -top-2 -right-5  text-white  font-semibold rounded-full   p-1 justify-center flex items-center">
+          <div className="bg-basic absolute -top-4 left-3 lg:-top-2 lg:-right-5 lg:left-5 text-white  font-semibold rounded-full  p-1 justify-center flex items-center">
             <p className=" text-sm ">+{cart.length}</p>
           </div>
         </div>
@@ -137,33 +137,64 @@ const Navbar = () => {
               {navOptions}
             </ul>
           </div>
-          <Link to="/" className="btn btn-ghost font-bold text-xl lg:text-2xl">
+          {/* Always visible on large screens */}
+          <Link
+            to="/"
+            className="btn btn-ghost font-bold lg:text-2xl hidden lg:block"
+          >
             Qu!ck Grab
           </Link>
+
+          {/* Visible on mobile only when user is NOT logged in */}
+          {!user && (
+            <Link
+              to="/"
+              className="btn btn-ghost font-bold text-lg block lg:hidden"
+            >
+              Qu!ck Grab
+            </Link>
+          )}
         </div>
         <div className="navbar-center hidden lg:flex py-0 lg:py-4 ">
-          <ul className="menu menu-horizontal gap-8 text-[22px] px-1">
+          <ul className="menu menu-horizontal gap-5 text-[22px] px-1">
             {navOptions}
           </ul>
         </div>
         <Toaster />
         {user ? (
           <>
-            <div className="navbar-end mr-5 lg:mr-10">
-              <p className="mr-4 text-yellow-400 font-bold text-xl">
+            <div className="navbar-end items-center gap-3   flex  lg:mr-10">
+              {/* User Image */}
+              {user?.photoURL && (
+                <img
+                  src={user.photoURL}
+                  alt="User"
+                  className="w-8 h-8 lg:w-10 lg:h-10 rounded-full object-cover border-2 border-yellow-400"
+                />
+              )}
+
+              {/* User Name */}
+              <p className="text-sm lg:text-base text-yellow-400 font-bold">
                 {user?.displayName}
               </p>
-              <button onClick={handleLogout} className="btn btn-error ">
-                Logout
-              </button>
             </div>
+
+            {/* Logout Button */}
+            <button
+              onClick={handleLogout}
+              className="bg-red-600 py-2 px-4 lg:py-3 w-[50%] lg:w-[30%] text-sm lg:text-xl font-bold rounded-full 
+             transition-all duration-300 ease-in-out hover:bg-red-700 hover:scale-105 
+             text-center flex justify-center items-center"
+            >
+              Logout
+            </button>
           </>
         ) : (
           <>
-            <div className="navbar-end mr-5 lg:mr-10">
+            <div className="navbar-end     mr-5 lg:mr-10">
               <Link to="/login">
                 <button
-                  className="bg-basic py-3 w-40 text-xl font-bold rounded-full 
+                  className="bg-basic lg:py-3 py-2  w-24 lg:w-40 text-xl font-bold rounded-full 
                        transition-all duration-300 ease-in-out 
                        hover:bg-[#e25802] hover:scale-105"
                 >
