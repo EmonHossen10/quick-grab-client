@@ -97,7 +97,7 @@ const Navbar = () => {
         Secret
       </NavLink>
 
-      <Link to="/">
+      <Link to="/dashboard/cart">
         <div className="relative ">
           <span>
             <FaShoppingCart className="text-2xl" />
