@@ -10,6 +10,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import Dashboard from "../Layout/Dashboard";
 import Cart from "../Pages/Dashboard/Cart/Cart";
 import Reservation from "../Pages/Dashboard/reservation/Reservation";
+import AllUsers from "../Pages/Dashboard/AllUsers";
 
 const router = createBrowserRouter([
   {
@@ -62,6 +63,11 @@ const router = createBrowserRouter([
         path: "reservation",
         element: <Reservation></Reservation>,
       },
+      //Admin Routes
+      {
+        path: "allUsers",
+        element: <AllUsers></AllUsers>,
+      }
     ],
   },
 ]);

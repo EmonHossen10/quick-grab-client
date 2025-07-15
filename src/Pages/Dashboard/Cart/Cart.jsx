@@ -67,7 +67,7 @@ const Cart = () => {
         </div>
         {/* table here */}
         <div className="overflow-x-auto rounded-t-lg  ">
-          <table className="table mt-3">
+          <table className="table  ">
             {/* head */}
             <thead className="bg-[#d1a054] text-white ">
               <tr>

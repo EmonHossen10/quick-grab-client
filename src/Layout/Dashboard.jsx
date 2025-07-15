@@ -4,13 +4,15 @@ import {
   FaEnvelope,
   FaHome,
   FaShoppingCart,
+  FaUsers,
   FaWallet,
 } from "react-icons/fa";
 import { FaBagShopping } from "react-icons/fa6";
-import { MdMenu, MdReviews } from "react-icons/md";
+import { MdManageSearch, MdMenu, MdReviews, MdTableRows } from "react-icons/md";
 import { TbBrandBooking } from "react-icons/tb";
 import { NavLink, Outlet } from "react-router-dom";
 import useCart from "../Hooks/useCart";
+import { ImSpoonKnife } from "react-icons/im";
 
 const Dashboard = () => {
   const [cart] = useCart();
@@ -21,9 +23,11 @@ const Dashboard = () => {
       {/* dashboard slide bar */}
       <div className="w-64 bg-[#d1a054] min-h-screen ">
         <ul className="menu space-y-4 text-base pt-5 pl-6">
-          <p>
+          {isAdmin ? (
+            <>
+            <p>
             <NavLink
-              to="/dashboard/userHome"
+              to="/dashboard/adminHome"
               className={({ isActive }) =>
                 `flex flex-row gap-2 items-center   rounded-md transition-all duration-200 ${
                   isActive ? "  text-white" : "text-gray-700  hover:text-white"
@@ -31,7 +35,7 @@ const Dashboard = () => {
               }
             >
               <FaHome />
-              User Home
+              Admin Home
             </NavLink>
           </p>
           <p>
@@ -41,10 +45,10 @@ const Dashboard = () => {
                   isActive ? "  text-white" : "text-gray-700  hover:text-white"
                 }`
               }
-              to="/dashboard/reservation"
+              to="/dashboard/addItems"
             >
-              <FaCalendarAlt></FaCalendarAlt>
-              Reservation
+              <ImSpoonKnife />
+              ADD Items
             </NavLink>
           </p>
           <p>
@@ -54,10 +58,10 @@ const Dashboard = () => {
                   isActive ? "  text-white" : "text-gray-700  hover:text-white"
                 }`
               }
-              to="/dashboard/paymentHistory"
+              to="/dashboard/manageItems"
             >
-              <FaWallet></FaWallet>
-              Payment History
+              <MdTableRows />
+              Manage Items
             </NavLink>
           </p>
           <p>
@@ -67,10 +71,10 @@ const Dashboard = () => {
                   isActive ? "  text-white" : "text-gray-700  hover:text-white"
                 }`
               }
-              to="/dashboard/cart"
+              to="/dashboard/manageBookings"
             >
-              <FaShoppingCart></FaShoppingCart>
-              My Cart ({cart.length})
+             <TbBrandBooking />
+              Manage Bookings
             </NavLink>
           </p>
           <p>
@@ -80,25 +84,109 @@ const Dashboard = () => {
                   isActive ? "  text-white" : "text-gray-700  hover:text-white"
                 }`
               }
-              to="/dashboard/addReview"
+              to="/dashboard/allUsers"
             >
-              <MdReviews />
-              Add Review
+               <FaUsers />
+              ALL Users
             </NavLink>
           </p>
-          <p>
-            <NavLink
-              className={({ isActive }) =>
-                `flex flex-row gap-2 items-center   rounded-md transition-all duration-200 ${
-                  isActive ? "  text-white" : "text-gray-700  hover:text-white"
-                }`
-              }
-              to="/dashboard/myBooking"
-            >
-              <TbBrandBooking />
-              My Booking
-            </NavLink>
-          </p>
+         
+
+            </>
+          ) : (
+            <>
+              <p>
+                <NavLink
+                  to="/dashboard/userHome"
+                  className={({ isActive }) =>
+                    `flex flex-row gap-2 items-center   rounded-md transition-all duration-200 ${
+                      isActive
+                        ? "  text-white"
+                        : "text-gray-700  hover:text-white"
+                    }`
+                  }
+                >
+                  <FaHome />
+                  User Home
+                </NavLink>
+              </p>
+              <p>
+                <NavLink
+                  className={({ isActive }) =>
+                    `flex flex-row gap-2 items-center   rounded-md transition-all duration-200 ${
+                      isActive
+                        ? "  text-white"
+                        : "text-gray-700  hover:text-white"
+                    }`
+                  }
+                  to="/dashboard/reservation"
+                >
+                  <FaCalendarAlt></FaCalendarAlt>
+                  Reservation
+                </NavLink>
+              </p>
+              <p>
+                <NavLink
+                  className={({ isActive }) =>
+                    `flex flex-row gap-2 items-center   rounded-md transition-all duration-200 ${
+                      isActive
+                        ? "  text-white"
+                        : "text-gray-700  hover:text-white"
+                    }`
+                  }
+                  to="/dashboard/paymentHistory"
+                >
+                  <FaWallet></FaWallet>
+                  Payment History
+                </NavLink>
+              </p>
+              <p>
+                <NavLink
+                  className={({ isActive }) =>
+                    `flex flex-row gap-2 items-center   rounded-md transition-all duration-200 ${
+                      isActive
+                        ? "  text-white"
+                        : "text-gray-700  hover:text-white"
+                    }`
+                  }
+                  to="/dashboard/cart"
+                >
+                  <FaShoppingCart></FaShoppingCart>
+                  My Cart ({cart.length})
+                </NavLink>
+              </p>
+              <p>
+                <NavLink
+                  className={({ isActive }) =>
+                    `flex flex-row gap-2 items-center   rounded-md transition-all duration-200 ${
+                      isActive
+                        ? "  text-white"
+                        : "text-gray-700  hover:text-white"
+                    }`
+                  }
+                  to="/dashboard/addReview"
+                >
+                  <MdReviews />
+                  Add Review
+                </NavLink>
+              </p>
+              <p>
+                <NavLink
+                  className={({ isActive }) =>
+                    `flex flex-row gap-2 items-center   rounded-md transition-all duration-200 ${
+                      isActive
+                        ? "  text-white"
+                        : "text-gray-700  hover:text-white"
+                    }`
+                  }
+                  to="/dashboard/myBooking"
+                >
+                  <TbBrandBooking />
+                  My Booking
+                </NavLink>
+              </p>
+            </>
+          )}
 
           {/* ****************divider*********************** */}
           <div className=" ">
