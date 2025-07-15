@@ -1,11 +1,52 @@
 import React from "react";
 import useCart from "../../../Hooks/useCart";
 import DashboardTitle from "../../../Components/DashboardTitle";
+import { RiDeleteBin6Fill, RiDeleteBin6Line } from "react-icons/ri";
+import Swal from "sweetalert2";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 
 const Cart = () => {
-  const [cart] = useCart();
-  // console.log(cart.length);
-  const totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
+  const [cart, refetch] = useCart();
+  const axiosSecure = useAxiosSecure();
+
+  const totalPrice = cart.reduce((sum, item) => sum + item.price, 0).toFixed(2);
+
+  const handleDelete = (id) => {
+    console.log("Delete item with id:", id);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axiosSecure
+          .delete(`/carts/${id}`)
+          .then((response) => {
+            if (response.data.deletedCount > 0) {
+              refetch();
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your item has been removed from the cart.",
+                icon: "success",
+              });
+              // Optionally, you can refresh the cart or perform any other action
+            }
+          })
+          .catch((error) => {
+            console.error("Error deleting item:", error);
+            Swal.fire({
+              title: "Error!",
+              text: "There was an error deleting the item.",
+              icon: "error",
+            });
+          });
+      }
+    });
+  };
 
   return (
     <>
@@ -25,8 +66,8 @@ const Cart = () => {
           </button>
         </div>
         {/* table here */}
-        <div className="overflow-x-auto rounded-t-lg ">
-          <table className="table">
+        <div className="overflow-x-auto rounded-t-lg  ">
+          <table className="table mt-3">
             {/* head */}
             <thead className="bg-[#d1a054] text-white ">
               <tr>
@@ -58,7 +99,9 @@ const Cart = () => {
                   <td>{item.name}</td>
                   <td>${item.price}</td>
                   <th>
-                    <button className="btn btn-ghost btn-xs">details</button>
+                    <button onClick={() => handleDelete(item._id)}>
+                      <RiDeleteBin6Line className="bg-red-600 p-2  rounded text-4xl text-white cursor-pointer" />
+                    </button>
                   </th>
                 </tr>
               ))}

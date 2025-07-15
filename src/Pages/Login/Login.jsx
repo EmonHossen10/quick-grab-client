@@ -8,19 +8,17 @@ import {
   FaLock,
   FaShieldAlt,
 } from "react-icons/fa";
-
-import loginBG5 from "/asset/loginBG5.png";
-
 import {
   loadCaptchaEnginge,
   LoadCanvasTemplate,
   validateCaptcha,
 } from "react-simple-captcha";
-
 import toast, { Toaster } from "react-hot-toast";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import loginBG5 from "/asset/loginBG5.png";
+import google from "/asset/googleLogo.png";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
@@ -68,7 +66,7 @@ const Login = () => {
       .catch((error) => {
         const errorMessage = error.message;
         console.log(errorMessage);
-        toast.error("Error In Login ");
+        toast.error("Please Create an account first");
       });
   };
   return (
@@ -204,7 +202,8 @@ const Login = () => {
                   type="button"
                   className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-full hover:bg-gray-100 transition"
                 >
-                  <FaGoogle className="text-[#4285F4]" />{" "}
+                  {/* <FaGoogle className="text-[#4285F4]" />{" "} */}
+                  <img width={30} src={google} alt="Google Logo" />
                   {/* Google's official blue */}
                 </button>
 
@@ -213,8 +212,8 @@ const Login = () => {
                   type="button"
                   className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-full hover:bg-gray-100 transition"
                 >
-                  <FaGithub className="text-[#171515]" />{" "}
-                  {/* GitHub's official dark color */}
+                  <FaGithub className="text-[#171515] text-xl" /> 
+              
                 </button>
               </div>
             </form>

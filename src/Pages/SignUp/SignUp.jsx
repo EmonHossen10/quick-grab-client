@@ -7,9 +7,11 @@ import { AuthContext } from "../../providers/AuthProvider";
 import toast, { Toaster } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import UseAxiosPublic from "../../Hooks/UseAxiosPublic";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const axiosPublic = UseAxiosPublic();
   const {
     register,
     reset,
@@ -31,10 +33,24 @@ const SignUp = () => {
         // update profile
         updateUserProfile(data.name, data.photoURL)
           .then(() => {
-            console.log("User profile info updated");
-            reset();
-            toast.success("Update user info");
-            navigate("/");
+            // create user entry in database
+            const userInfo = {
+              name: data.name,
+              email: data.email,
+              photoURL: data.photoURL,
+            };
+            axiosPublic
+              .post("/users", userInfo)
+              .then((response) => {
+                if (response.data.insertedId) {
+                  reset();
+                  toast.success("Update user info");
+                  navigate("/");
+                }
+              })
+              .catch((error) => {
+                console.log(error);
+              });
           })
           .catch((error) => {
             console.log(error);

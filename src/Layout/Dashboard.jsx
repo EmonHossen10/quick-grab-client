@@ -10,8 +10,10 @@ import { FaBagShopping } from "react-icons/fa6";
 import { MdMenu, MdReviews } from "react-icons/md";
 import { TbBrandBooking } from "react-icons/tb";
 import { NavLink, Outlet } from "react-router-dom";
+import useCart from "../Hooks/useCart";
 
 const Dashboard = () => {
+  const [cart] = useCart();
   return (
     <div className="flex ">
       {/* dashboard slide bar */}
@@ -67,7 +69,7 @@ const Dashboard = () => {
               to="/dashboard/cart"
             >
               <FaShoppingCart></FaShoppingCart>
-              My Cart
+              My Cart ({cart.length})
             </NavLink>
           </p>
           <p>
