@@ -14,6 +14,8 @@ import useCart from "../Hooks/useCart";
 
 const Dashboard = () => {
   const [cart] = useCart();
+  //TODO:get isAdmin data from the database
+  const isAdmin = true;
   return (
     <div className="flex ">
       {/* dashboard slide bar */}
@@ -58,7 +60,6 @@ const Dashboard = () => {
               Payment History
             </NavLink>
           </p>
-
           <p>
             <NavLink
               className={({ isActive }) =>
@@ -98,12 +99,13 @@ const Dashboard = () => {
               My Booking
             </NavLink>
           </p>
-          {/* divider */}
+
+          {/* ****************divider*********************** */}
           <div className=" ">
             <div className="bg-white h-[1px] my-8"></div>
           </div>
 
-          {/* another navigation menus  */}
+          {/* another navigation menus its is common items */}
           <p>
             <NavLink
               to="/"

@@ -8,6 +8,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import UseAxiosPublic from "../../Hooks/UseAxiosPublic";
+import SocialLogin from "../../Components/SocialLogin";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -210,6 +211,14 @@ const SignUp = () => {
                 </span>
               </small>
             </div>
+            <div className="flex items-center justify-center gap-4 my-6">
+                <div className="flex-grow h-px bg-gray-300"></div>
+                <span className="text-sm text-gray-500 whitespace-nowrap">
+                  Login With Social
+                </span>
+                <div className="flex-grow h-px bg-gray-300"></div>
+              </div>
+            <SocialLogin/>
           </form>
         </div>
       </section>

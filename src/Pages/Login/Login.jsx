@@ -3,8 +3,6 @@ import {
   FaEnvelope,
   FaEye,
   FaEyeSlash,
-  FaGithub,
-  FaGoogle,
   FaLock,
   FaShieldAlt,
 } from "react-icons/fa";
@@ -18,7 +16,8 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import loginBG5 from "/asset/loginBG5.png";
-import google from "/asset/googleLogo.png";
+
+import SocialLogin from "../../Components/SocialLogin";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
@@ -196,26 +195,7 @@ const Login = () => {
               </div>
 
               {/* social login */}
-              <div className="flex flex-row justify-center gap-4 mt-6">
-                {/* Google Login */}
-                <button
-                  type="button"
-                  className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-full hover:bg-gray-100 transition"
-                >
-                  {/* <FaGoogle className="text-[#4285F4]" />{" "} */}
-                  <img width={30} src={google} alt="Google Logo" />
-                  {/* Google's official blue */}
-                </button>
-
-                {/* GitHub Login */}
-                <button
-                  type="button"
-                  className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-full hover:bg-gray-100 transition"
-                >
-                  <FaGithub className="text-[#171515] text-xl" /> 
-              
-                </button>
-              </div>
+              <SocialLogin />
             </form>
           </div>
         </div>
