@@ -157,7 +157,7 @@ const Dashboard = () => {
         </ul>
       </div>
       {/* Dashboard content */}
-      <div className="flex-1 ">
+      <div className="flex-1 p-8 bg-[#f6f6f6]">
         <Outlet></Outlet>
       </div>
     </div>
