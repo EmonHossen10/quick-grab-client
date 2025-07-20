@@ -7,7 +7,8 @@ import { useNavigate } from "react-router-dom";
 import UseAxiosPublic from "../Hooks/UseAxiosPublic";
 
 const SocialLogin = () => {
-  const { signInWithGoogle } = useAuth();
+  const { signInWithGoogle, signInWithGithub } = useAuth();
+
   const axiosPublic = UseAxiosPublic();
   const navigate = useNavigate();
   const handleGoogleSignIn = () => {
@@ -30,6 +31,29 @@ const SocialLogin = () => {
       });
     });
   };
+
+  const handleGithubSignIn = () => {
+    signInWithGithub()
+      .then((result) => {
+        const user = result.user;
+        const userInfo = {
+          email: user.email,
+          name: user.displayName,
+          photoURL: user.photoURL,
+        };
+
+        axiosPublic.post("/users", userInfo).then((res) => {
+          console.log(res.data);
+          toast.success(`Welcome, ${user.displayName}!`);
+          navigate("/");
+        });
+      })
+      .catch((error) => {
+        console.error("GitHub Login Failed", error);
+        toast.error("GitHub login failed!");
+      });
+  };
+
   return (
     <div className="flex flex-row justify-center gap-4 mt-6">
       {/* Google Login */}
@@ -45,6 +69,7 @@ const SocialLogin = () => {
       {/* GitHub Login */}
       <button
         type="button"
+        onClick={handleGithubSignIn}
         className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-full hover:bg-gray-100 transition"
       >
         <FaGithub className="text-[#171515] text-xl" />
