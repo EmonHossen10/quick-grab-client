@@ -13,11 +13,12 @@ import { TbBrandBooking } from "react-icons/tb";
 import { NavLink, Outlet } from "react-router-dom";
 import useCart from "../Hooks/useCart";
 import { ImSpoonKnife } from "react-icons/im";
+import useAdmin from "../Hooks/UseAdmin";
 
 const Dashboard = () => {
   const [cart] = useCart();
   //TODO:get isAdmin data from the database
-  const isAdmin = true;
+  const [isAdmin] = useAdmin();
   return (
     <div className="flex ">
       {/* dashboard slide bar */}
@@ -25,73 +26,81 @@ const Dashboard = () => {
         <ul className="menu space-y-4 text-base pt-5 pl-6">
           {isAdmin ? (
             <>
-            <p>
-            <NavLink
-              to="/dashboard/adminHome"
-              className={({ isActive }) =>
-                `flex flex-row gap-2 items-center   rounded-md transition-all duration-200 ${
-                  isActive ? "  text-white" : "text-gray-700  hover:text-white"
-                }`
-              }
-            >
-              <FaHome />
-              Admin Home
-            </NavLink>
-          </p>
-          <p>
-            <NavLink
-              className={({ isActive }) =>
-                `flex flex-row gap-2 items-center   rounded-md transition-all duration-200 ${
-                  isActive ? "  text-white" : "text-gray-700  hover:text-white"
-                }`
-              }
-              to="/dashboard/addItems"
-            >
-              <ImSpoonKnife />
-              ADD Items
-            </NavLink>
-          </p>
-          <p>
-            <NavLink
-              className={({ isActive }) =>
-                `flex flex-row gap-2 items-center   rounded-md transition-all duration-200 ${
-                  isActive ? "  text-white" : "text-gray-700  hover:text-white"
-                }`
-              }
-              to="/dashboard/manageItems"
-            >
-              <MdTableRows />
-              Manage Items
-            </NavLink>
-          </p>
-          <p>
-            <NavLink
-              className={({ isActive }) =>
-                `flex flex-row gap-2 items-center   rounded-md transition-all duration-200 ${
-                  isActive ? "  text-white" : "text-gray-700  hover:text-white"
-                }`
-              }
-              to="/dashboard/manageBookings"
-            >
-             <TbBrandBooking />
-              Manage Bookings
-            </NavLink>
-          </p>
-          <p>
-            <NavLink
-              className={({ isActive }) =>
-                `flex flex-row gap-2 items-center   rounded-md transition-all duration-200 ${
-                  isActive ? "  text-white" : "text-gray-700  hover:text-white"
-                }`
-              }
-              to="/dashboard/allUsers"
-            >
-               <FaUsers />
-              ALL Users
-            </NavLink>
-          </p>
-         
-
+              <p>
+                <NavLink
+                  to="/dashboard/adminHome"
+                  className={({ isActive }) =>
+                    `flex flex-row gap-2 items-center   rounded-md transition-all duration-200 ${
+                      isActive
+                        ? "  text-white"
+                        : "text-gray-700  hover:text-white"
+                    }`
+                  }
+                >
+                  <FaHome />
+                  Admin Home
+                </NavLink>
+              </p>
+              <p>
+                <NavLink
+                  className={({ isActive }) =>
+                    `flex flex-row gap-2 items-center   rounded-md transition-all duration-200 ${
+                      isActive
+                        ? "  text-white"
+                        : "text-gray-700  hover:text-white"
+                    }`
+                  }
+                  to="/dashboard/addItems"
+                >
+                  <ImSpoonKnife />
+                  ADD Items
+                </NavLink>
+              </p>
+              <p>
+                <NavLink
+                  className={({ isActive }) =>
+                    `flex flex-row gap-2 items-center   rounded-md transition-all duration-200 ${
+                      isActive
+                        ? "  text-white"
+                        : "text-gray-700  hover:text-white"
+                    }`
+                  }
+                  to="/dashboard/manageItems"
+                >
+                  <MdTableRows />
+                  Manage Items
+                </NavLink>
+              </p>
+              <p>
+                <NavLink
+                  className={({ isActive }) =>
+                    `flex flex-row gap-2 items-center   rounded-md transition-all duration-200 ${
+                      isActive
+                        ? "  text-white"
+                        : "text-gray-700  hover:text-white"
+                    }`
+                  }
+                  to="/dashboard/manageBookings"
+                >
+                  <TbBrandBooking />
+                  Manage Bookings
+                </NavLink>
+              </p>
+              <p>
+                <NavLink
+                  className={({ isActive }) =>
+                    `flex flex-row gap-2 items-center   rounded-md transition-all duration-200 ${
+                      isActive
+                        ? "  text-white"
+                        : "text-gray-700  hover:text-white"
+                    }`
+                  }
+                  to="/dashboard/allUsers"
+                >
+                  <FaUsers />
+                  ALL Users
+                </NavLink>
+              </p>
             </>
           ) : (
             <>
