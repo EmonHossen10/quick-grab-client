@@ -60,7 +60,7 @@ const CardShare = ({ item }) => {
           <img
             className=" object-cover hover:scale-125 transition-all ease-in duration-200 w-full h-full"
             src={image}
-            alt="Shoes"
+            alt="img"
           />
         </figure>
         <p className="bg-black text-white font-bold w-3/12 text-center py-1 absolute right-4 top-4">

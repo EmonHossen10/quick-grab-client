@@ -7,7 +7,6 @@ import { FaUsers } from "react-icons/fa";
 
 const AllUsers = () => {
   const axiosSecure = useAxiosSecure();
-
   const { data: users = [], refetch } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
