@@ -1,6 +1,5 @@
 [
   {
-    "_id": "642c155b2c4774f05c36eeab",
     "name": "Mediterranean Glow",
     "recipe": "Crisp romaine, cherry tomatoes, cucumbers, red onions, Kalamata olives, and crumbled feta, tossed in a lemon-herb vinaigrette.",
     "image": "https://images.pexels.com/photos/1211887/pexels-photo-1211887.jpeg",
@@ -8,7 +7,6 @@
     "price": 12.9
   },
   {
-    "_id": "642c155b2c4774f05c36eeac",
     "name": "Summer Orchard Mix",
     "recipe": "Baby spinach, sliced strawberries, toasted almonds, and goat cheese, drizzled with a sweet poppy seed dressing.",
     "image": "https://images.pexels.com/photos/5938/food-salad-healthy-lunch.jpg",
@@ -16,7 +14,6 @@
     "price": 13.2
   },
   {
-    "_id": "642c155b2c4774f05c36eead",
     "name": "Classic Caesar Twist",
     "recipe": "Romaine lettuce, garlic croutons, grilled shrimp, and shaved Parmesan, coated in a creamy Caesar dressing with a hint of lemon.",
     "image": "https://images.pexels.com/photos/1351238/pexels-photo-1351238.jpeg",
@@ -24,7 +21,6 @@
     "price": 14.5
   },
   {
-    "_id": "642c155b2c4774f05c36eeae",
     "name": "Southwest Zest",
     "recipe": "Mixed greens, roasted corn, black beans, avocado, and crispy tortilla strips, served with a spicy chipotle-lime dressing.",
     "image": "https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg",
@@ -32,7 +28,6 @@
     "price": 11.8
   },
   {
-    "_id": "642c155b2c4774f05c36eeaf",
     "name": "Quinoa Harvest Bowl",
     "recipe": "Nutty quinoa, roasted butternut squash, kale, dried cranberries, and pumpkin seeds, tossed in a maple-tahini dressing.",
     "image": "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg",
@@ -40,7 +35,6 @@
     "price": 13.9
   },
   {
-    "_id": "642c155b2c4774f05c36eeb0",
     "name": "Tropical Breeze",
     "recipe": "Arugula, diced mango, avocado, toasted coconut, and cashews, finished with a citrus-mint vinaigrette.",
     "image": "https://images.pexels.com/photos/257816/pexels-photo-257816.jpeg",
@@ -48,7 +42,6 @@
     "price": 12.7
   },
   {
-    "_id": "642c155b2c4774f05c36eeb1",
     "name": "Cobb Royale",
     "recipe": "Chopped romaine, grilled chicken, bacon, boiled eggs, cherry tomatoes, avocado, and blue cheese, with a red wine vinaigrette.",
     "image": "https://images.pexels.com/photos/2116093/pexels-photo-2116093.jpeg",
@@ -56,7 +49,6 @@
     "price": 15.3
   },
   {
-    "_id": "642c155b2c4774f05c36eeb2",
     "name": "Caprese Fresco",
     "recipe": "Heirloom tomatoes, fresh mozzarella, basil, and arugula, drizzled with balsamic glaze and extra virgin olive oil.",
     "image": "https://images.pexels.com/photos/533325/pexels-photo-533325.jpeg",
@@ -64,7 +56,6 @@
     "price": 11.5
   },
   {
-    "_id": "642c155b2c4774f05c36eeb3",
     "name": "Asian Sesame Crunch",
     "recipe": "Napa cabbage, shredded carrots, edamame, mandarin oranges, and crispy wonton strips, tossed in a sesame-ginger dressing.",
     "image": "https://images.pexels.com/photos/1639556/pexels-photo-1639556.jpeg",
@@ -72,7 +63,6 @@
     "price": 12.4
   },
   {
-    "_id": "642c155b2c4774f05c36eeb4",
     "name": "Beet & Goat Cheese Bliss",
     "recipe": "Roasted beets, mixed greens, candied walnuts, goat cheese, and sliced pears, served with a honey-balsamic dressing.",
     "image": "https://images.pexels.com/photos/1211887/pexels-photo-1211887.jpeg",
@@ -80,7 +70,6 @@
     "price": 14.0
   },
   {
-    "_id": "8e4f2c1d-9b3e-4a2f-8c7d-3f9a6e2b1d4c",
     "name": "Citrus Sunrise",
     "recipe": "A vibrant blend of orange juice, grapefruit juice, and grenadine, served over ice with an orange slice garnish.",
     "image": "https://images.pexels.com/photos/338713/pexels-photo-338713.jpeg",
@@ -88,7 +77,6 @@
     "price": 6.5
   },
   {
-    "_id": "3b9e7a4f-2d1c-4e8b-9f3a-6c2b1d5e7f8a",
     "name": "Minty Mojito",
     "recipe": "Fresh mint leaves muddled with lime juice and simple syrup, topped with soda water and rum, served with a mint sprig.",
     "image": "https://images.pexels.com/photos/7376800/pexels-photo-7376800.jpeg",
@@ -96,7 +84,6 @@
     "price": 8.2
   },
   {
-    "_id": "6d2f1b8e-4a3c-4f9a-8b7e-2c1d6e3f9a4b",
     "name": "Berry Bliss Smoothie",
     "recipe": "A creamy blend of strawberries, blueberries, banana, and Greek yogurt, mixed with almond milk and honey.",
     "image": "https://images.pexels.com/photos/7937483/pexels-photo-7937483.jpeg",
@@ -104,7 +91,6 @@
     "price": 7.9
   },
   {
-    "_id": "9f3a6c2b-1d5e-4e8b-9b7c-3f2a1d6e8b4f",
     "name": "Spiced Chai Latte",
     "recipe": "Black tea infused with cinnamon, cardamom, and cloves, blended with steamed milk and topped with nutmeg.",
     "image": "https://images.pexels.com/photos/312420/pexels-photo-312420.jpeg",
@@ -112,7 +98,6 @@
     "price": 5.8
   },
   {
-    "_id": "2c1d6e3f-9a4b-4f8e-8b7c-6d2f1b8e3a9c",
     "name": "Tropical Coconut Cooler",
     "recipe": "Pineapple juice, coconut water, and lime juice, shaken with ice and garnished with a pineapple wedge.",
     "image": "https://images.pexels.com/photos/103566/pexels-photo-103566.jpeg",
@@ -120,7 +105,6 @@
     "price": 6.3
   },
   {
-    "_id": "7f8a3b9e-2c1d-4a6f-9b3c-1d5e7f8a2b6e",
     "name": "Iced Lavender Lemonade",
     "recipe": "Homemade lemonade infused with lavender syrup, served over ice with a lavender sprig garnish.",
     "image": "https://images.pexels.com/photos/30498405/pexels-photo-30498405.jpeg",
@@ -128,7 +112,6 @@
     "price": 5.5
   },
   {
-    "_id": "4e8b9f3a-6c2b-1d5e-4a7c-9b3c2d1e6f8a",
     "name": "Espresso Martini",
     "recipe": "Fresh espresso, vodka, and coffee liqueur, shaken and served chilled with coffee beans on top.",
     "image": "https://images.pexels.com/photos/15082311/pexels-photo-15082311.jpeg",
@@ -136,7 +119,6 @@
     "price": 9.0
   },
   {
-    "_id": "1d5e7f8a-2b6c-4e9f-8b3c-6a2f1d4e9b7c",
     "name": "Ginger Peach Iced Tea",
     "recipe": "Black tea infused with peach puree and a hint of ginger, served over ice with a peach slice.",
     "image": "https://images.pexels.com/photos/10802278/pexels-photo-10802278.jpeg",
@@ -144,7 +126,6 @@
     "price": 6.0
   },
   {
-    "_id": "6a2f1d4e-9b7c-4e8b-9f3a-2c1d6e3f8a4b",
     "name": "Cucumber Mint Spritzer",
     "recipe": "Cucumber-infused water with mint syrup and sparkling water, garnished with a cucumber slice and mint.",
     "image": "https://images.pexels.com/photos/7259020/pexels-photo-7259020.jpeg",
@@ -152,7 +133,6 @@
     "price": 5.7
   },
   {
-    "_id": "9b3c2d1e-6f8a-4e7c-8b3f-1d5e7a2b9c6f",
     "name": "Mango Passionfruit Slush",
     "recipe": "Blended mango and passionfruit puree with lime juice, served frozen with a mango slice garnish.",
     "image": "https://images.pexels.com/photos/21053382/pexels-photo-21053382.jpeg",
@@ -160,7 +140,6 @@
     "price": 7.5
   },
   {
-    "_id": "1b2c3d4e-5f6a-4b7c-8d9e-0f1a2b3c4d5e",
     "name": "Chocolate Lava Delight",
     "recipe": "Warm chocolate cake with a molten center, served with a scoop of vanilla ice cream and a drizzle of raspberry coulis.",
     "image": "https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg",
@@ -168,7 +147,6 @@
     "price": 8.5
   },
   {
-    "_id": "2c3d4e5f-6a7b-4c8d-9e0f-1a2b3c4d5e6f",
     "name": "Lemon Tart Bliss",
     "recipe": "Buttery shortcrust pastry filled with tangy lemon curd, topped with whipped cream and a sprinkle of lemon zest.",
     "image": "https://images.pexels.com/photos/262959/pexels-photo-262959.jpeg",
@@ -176,7 +154,6 @@
     "price": 7.9
   },
   {
-    "_id": "3d4e5f6a-7b8c-4d9e-0f1a-2b3c4d5e6f7a",
     "name": "Berry Pavlova Dream",
     "recipe": "Crispy meringue topped with whipped cream, fresh strawberries, blueberries, and a dusting of powdered sugar.",
     "image": "https://images.pexels.com/photos/827513/pexels-photo-827513.jpeg",
@@ -184,7 +161,6 @@
     "price": 9.2
   },
   {
-    "_id": "4e5f6a7b-8c9d-4e0f-1a2b-3c4d5e6f7a8b",
     "name": "Caramel Apple Crumble",
     "recipe": "Warm spiced apple filling topped with a buttery oat crumble, served with a scoop of caramel ice cream.",
     "image": "https://images.pexels.com/photos/461060/pexels-photo-461060.jpeg",
@@ -192,7 +168,6 @@
     "price": 8.0
   },
   {
-    "_id": "5f6a7b8c-9d0e-4f1a-2b3c-4d5e6f7a8b9c",
     "name": "Tiramisu Elegance",
     "recipe": "Layers of coffee-soaked ladyfingers, mascarpone cream, and cocoa powder, garnished with chocolate shavings.",
     "image": "https://images.pexels.com/photos/32867539/pexels-photo-32867539.jpeg",
@@ -200,7 +175,6 @@
     "price": 9.5
   },
   {
-    "_id": "6a7b8c9d-0e1f-4a2b-3c4d-5e6f7a8b9c0d",
     "name": "Mango Coconut Panna Cotta",
     "recipe": "Creamy coconut panna cotta topped with a vibrant mango puree and toasted coconut flakes.",
     "image": "https://images.pexels.com/photos/19533285/pexels-photo-19533285.jpeg",
@@ -208,7 +182,6 @@
     "price": 7.8
   },
   {
-    "_id": "7b8c9d0e-1f2a-4b3c-4d5e-6f7a8b9c0d1e",
     "name": "Salted Caramel Cheesecake",
     "recipe": "Rich cheesecake on a graham cracker crust, swirled with salted caramel and topped with a caramel drizzle.",
     "image": "https://images.pexels.com/photos/27626520/pexels-photo-27626520.jpeg",
@@ -216,7 +189,6 @@
     "price": 8.7
   },
   {
-    "_id": "8c9d0e1f-2a3b-4c4d-5e6f-7a8b9c0d1e2f",
     "name": "Strawberry Shortcake",
     "recipe": "Fluffy vanilla sponge layered with whipped cream and fresh strawberries, served with a strawberry coulis.",
     "image": "https://images.pexels.com/photos/461431/pexels-photo-461431.jpeg",
@@ -224,7 +196,6 @@
     "price": 8.3
   },
   {
-    "_id": "9d0e1f2a-3b4c-4d5e-6f7a-8b9c0d1e2f3a",
     "name": "Pistachio Baklava",
     "recipe": "Layers of flaky phyllo pastry filled with crushed pistachios, soaked in honey syrup and sprinkled with pistachio dust.",
     "image": "https://images.pexels.com/photos/1487511/pexels-photo-1487511.jpeg",
@@ -232,7 +203,6 @@
     "price": 7.5
   },
   {
-    "_id": "0e1f2a3b-4c5d-4e6f-7a8b-9c0d1e2f3a4b",
     "name": "Dark Chocolate Mousse",
     "recipe": "Silky dark chocolate mousse topped with whipped cream and fresh raspberries for a decadent finish.",
     "image": "https://images.pexels.com/photos/3026804/pexels-photo-3026804.jpeg",
@@ -240,7 +210,6 @@
     "price": 8.9
   },
    {
-    "_id": "1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
     "name": "Creamy Tomato Basil",
     "recipe": "Rich tomato soup blended with fresh basil and cream, served with a sprinkle of Parmesan and a basil leaf garnish.",
     "image": "https://images.pexels.com/photos/539451/pexels-photo-539451.jpeg",
@@ -248,7 +217,6 @@
     "price": 6.5
   },
   {
-    "_id": "2b3c4d5e-6f7a-4b8c-9d0e-1f2a3b4c5d6e",
     "name": "Butternut Squash Glow",
     "recipe": "Velvety roasted butternut squash soup with a hint of nutmeg and a swirl of coconut milk, garnished with pumpkin seeds.",
     "image": "https://images.pexels.com/photos/5605521/pexels-photo-5605521.jpeg",
@@ -256,7 +224,6 @@
     "price": 7.2
   },
   {
-    "_id": "3c4d5e6f-7a8b-4c9d-0e1f-2a3b4c5d6e7f",
     "name": "Spicy Lentil Delight",
     "recipe": "Hearty red lentil soup with carrots, onions, and a kick of smoked paprika, finished with a drizzle of olive oil.",
     "image": "https://images.pexels.com/photos/3493579/pexels-photo-3493579.jpeg",
@@ -264,7 +231,6 @@
     "price": 6.8
   },
   {
-    "_id": "4d5e6f7a-8b9c-4d0e-1f2a-3b4c5d6e7f8a",
     "name": "Chicken Noodle Comfort",
     "recipe": "Classic chicken broth with tender noodles, shredded chicken, carrots, and celery, garnished with fresh parsley.",
     "image": "https://images.pexels.com/photos/5338137/pexels-photo-5338137.jpeg",
@@ -272,7 +238,6 @@
     "price": 7.5
   },
   {
-    "_id": "5e6f7a8b-9c0d-4e1f-2a3b-4c5d6e7f8a9b",
     "name": "Mushroom Velouté",
     "recipe": "Creamy soup made from wild mushrooms, thyme, and a touch of sherry, served with a sprinkle of chives.",
     "image": "https://images.pexels.com/photos/13312318/pexels-photo-13312318.jpeg",
@@ -280,7 +245,6 @@
     "price": 8.0
   },
   {
-    "_id": "6f7a8b9c-0d1e-4f2a-3b4c-5d6e7f8a9b0c",
     "name": "Thai Coconut Curry",
     "recipe": "Spicy coconut milk-based soup with shrimp, lemongrass, ginger, and cilantro, served with a lime wedge.",
     "image": "https://images.pexels.com/photos/699953/pexels-photo-699953.jpeg",
@@ -288,7 +252,6 @@
     "price": 8.5
   },
   {
-    "_id": "7a8b9c0d-1e2f-4a3b-4c5d-6e7f8a9b0c1d",
     "name": "French Onion Classic",
     "recipe": "Caramelized onion soup topped with a toasted baguette slice and melted Gruyère cheese, served piping hot.",
     "image": "https://images.pexels.com/photos/1350509/pexels-photo-1350509.jpeg",
@@ -296,7 +259,6 @@
     "price": 7.9
   },
   {
-    "_id": "8b9c0d1e-2f3a-4b4c-5d6e-7f8a9b0c1d2e",
     "name": "Roasted Red Pepper",
     "recipe": "Smoky roasted red pepper soup blended with tomatoes and garlic, finished with a dollop of sour cream.",
     "image": "https://images.pexels.com/photos/17302314/pexels-photo-17302314.jpeg",
@@ -304,7 +266,6 @@
     "price": 6.7
   },
   {
-    "_id": "9c0d1e2f-3a4b-4c5d-6e7f-8a9b0c1d2e3f",
     "name": "Minestrone Medley",
     "recipe": "Hearty vegetable soup with pasta, kidney beans, zucchini, and tomatoes, sprinkled with fresh Parmesan.",
     "image": "https://images.pexels.com/photos/3493577/pexels-photo-3493577.jpeg",
@@ -312,7 +273,6 @@
     "price": 7.0
   },
   {
-    "_id": "0d1e2f3a-4b5c-4d6e-7f8a-9b0c1d2e3f4a",
     "name": "Pea and Mint Breeze",
     "recipe": "Fresh pea soup with a hint of mint, blended smooth and served with a drizzle of cream and mint leaves.",
     "image": "https://images.pexels.com/photos/5946712/pexels-photo-5946712.jpeg",
@@ -320,7 +280,6 @@
     "price": 6.9
   },
   {
-    "_id": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
     "name": "Margherita Classic",
     "recipe": "Hand-tossed dough topped with San Marzano tomato sauce, fresh mozzarella, basil leaves, and a drizzle of olive oil.",
     "image": "https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg",
@@ -328,7 +287,6 @@
     "price": 9.8
   },
   {
-    "_id": "b2c3d4e5-f6a7-4b8c-9d0e-1f2a3b4c5d6e",
     "name": "Pepperoni Feast",
     "recipe": "Crispy crust layered with rich tomato sauce, mozzarella cheese, and spicy pepperoni slices, baked to perfection.",
     "image": "https://images.pexels.com/photos/905847/pexels-photo-905847.jpeg",
@@ -336,7 +294,6 @@
     "price": 10.5
   },
   {
-    "_id": "c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f",
     "name": "Mushroom Truffle Delight",
     "recipe": "Thin crust pizza with a creamy white sauce, sautéed wild mushrooms, mozzarella, and a touch of truffle oil.",
     "image": "https://images.pexels.com/photos/3915857/pexels-photo-3915857.jpeg",
@@ -344,7 +301,6 @@
     "price": 12.0
   },
   {
-    "_id": "d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f8a",
     "name": "Veggie Supreme",
     "recipe": "Fresh dough topped with tomato sauce, mozzarella, bell peppers, red onions, olives, and cherry tomatoes.",
     "image": "https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg",
@@ -352,7 +308,6 @@
     "price": 10.2
   },
   {
-    "_id": "e5f6a7b8-c9d0-4e1f-2a3b-4c5d6e7f8a9b",
     "name": "BBQ Chicken Blast",
     "recipe": "Tangy BBQ sauce base, topped with grilled chicken, red onions, cilantro, and a blend of mozzarella and cheddar.",
     "image": "https://images.pexels.com/photos/2147491/pexels-photo-2147491.jpeg",
@@ -360,7 +315,6 @@
     "price": 11.5
   },
   {
-    "_id": "f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f8a9b0c",
     "name": "Four Cheese Heaven",
     "recipe": "A rich blend of mozzarella, Parmesan, Gorgonzola, and ricotta on a garlic-infused crust, finished with fresh herbs.",
     "image": "https://images.pexels.com/photos/367915/pexels-photo-367915.jpeg",
@@ -368,7 +322,6 @@
     "price": 11.8
   },
   {
-    "_id": "a7b8c9d0-e1f2-4a3b-4c5d-6e7f8a9b0c1d",
     "name": "Spicy Sausage Fiesta",
     "recipe": "Spicy Italian sausage, roasted red peppers, and mozzarella on a tomato sauce base, sprinkled with chili flakes.",
     "image": "https://images.pexels.com/photos/5903231/pexels-photo-5903231.jpeg",
@@ -376,7 +329,6 @@
     "price": 11.0
   },
   {
-    "_id": "b8c9d0e1-f2a3-4b4c-5d6e-7f8a9b0c1d2e",
     "name": "Pesto Prosciutto",
     "recipe": "Basil pesto base topped with prosciutto, arugula, mozzarella, and a balsamic glaze drizzle.",
     "image": "https://images.pexels.com/photos/2619967/pexels-photo-2619967.jpeg",
@@ -384,7 +336,6 @@
     "price": 12.5
   },
   {
-    "_id": "c9d0e1f2-a3b4-4c5d-6e7f-8a9b0c1d2e3f",
     "name": "Hawaiian Luau",
     "recipe": "Sweet and savory pizza with tomato sauce, mozzarella, ham, pineapple chunks, and a sprinkle of oregano.",
     "image": "https://images.pexels.com/photos/32611520/pexels-photo-32611520.jpeg",
@@ -392,7 +343,6 @@
     "price": 10.8
   },
   {
-    "_id": "d0e1f2a3-b4c5-4d6e-7f8a-9b0c1d2e3f4a",
     "name": "Spinach Artichoke Bliss",
     "recipe": "Creamy spinach and artichoke spread on a thin crust, topped with mozzarella and Parmesan, baked until golden.",
     "image": "https://images.pexels.com/photos/5639553/pexels-photo-5639553.jpeg",
@@ -400,7 +350,6 @@
     "price": 11.2
   },
   {
-    "_id": "f1a2b3c4-d5e6-4f7a-8b9c-0d1e2f3a4b5c",
     "name": "Tuna Niçoise",
     "recipe": "Warm goats cheese and roasted vegetable salad with black olive tapenade crostini",
     "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-2-370x247.jpg",
@@ -408,7 +357,6 @@
     "price": 10.5
   },
   {
-    "_id": "e2b3c4d5-e6f7-4a8b-9c0d-1e2f3a4b5c6d",
     "name": "Chicken and Walnut Salad",
     "recipe": "Pan roasted pork belly with gratin potato, braised Savoy cabbage, apples, thyme and calvados jus",
     "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-3-370x247.jpg",
@@ -416,7 +364,6 @@
     "price": 13.5
   },
   {
-    "_id": "d3c4d5e6-f7a8-4b9c-0d1e-2f3a4b5c6d7e",
     "name": "Roast Duck Breast",
     "recipe": "Roasted duck breast (served pink) with gratin potato and a griottine cherry sauce",
     "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-4-370x247.jpg",
@@ -424,7 +371,6 @@
     "price": 14.5
   },
   {
-    "_id": "c4d5e6f7-a8b9-4c0d-1e2f-3a4b5c6d7e8f",
     "name": "Escalope de Veau",
     "recipe": "Pan roasted haddock fillet wrapped in smoked French bacon with pea purée and tomato and chive vinaigrette",
     "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-2-370x247debit .jpg",
@@ -432,7 +378,6 @@
     "price": 12.5
   },
   {
-    "_id": "b5e6f7a8-b9c0-4d1e-2f3a-4b5c6d7e8f9a",
     "name": "Escalope de Veau",
     "recipe": "Roasted duck breast (served pink) with gratin potato and a griottine cherry sauce",
     "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-5-370x247.jpg",
@@ -440,7 +385,6 @@
     "price": 14.5
   },
   {
-    "_id": "a6f7a8b9-c0d1-4e2f-3a4b-5c6d7e8f9a0b",
     "name": "Roast Duck Breast",
     "recipe": "Roasted duck breast (served pink) with gratin potato and a griottine cherry sauce",
     "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-5-370x247.jpg",
@@ -448,7 +392,6 @@
     "price": 14.5
   },
   {
-    "_id": "97a8b9c0-d1e2-4f3a-4b5c-6d7e8f9a0b1c",
     "name": "Roasted Pork Belly",
     "recipe": "Roasted duck breast (served pink) with gratin potato and a griottine cherry sauce",
     "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-2-370x247.jpg",
@@ -456,7 +399,6 @@
     "price": 14.5
   },
   {
-    "_id": "86b9c0d1-e2f3-4a4b-5c6d-7e8f9a0b1c2d",
     "name": "Fish Parmentier",
     "recipe": "Roasted duck breast (served pink) with gratin potato and a griottine cherry sauce",
     "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-5-370x247.jpg",
