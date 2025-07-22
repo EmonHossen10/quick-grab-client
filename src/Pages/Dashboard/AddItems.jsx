@@ -1,11 +1,44 @@
 import { FaUtensils } from "react-icons/fa";
 import DashboardTitle from "../../Components/DashboardTitle";
 import { useForm } from "react-hook-form";
+import UseAxiosPublic from "../../Hooks/UseAxiosPublic";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import toast, { Toaster } from "react-hot-toast";
+
+const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
+const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
 const AddItems = () => {
-  const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => {
+  const { register, handleSubmit, reset } = useForm();
+  const axiosPublic = UseAxiosPublic();
+  const axiosSecure = useAxiosSecure();
+
+  const onSubmit = async (data) => {
     console.log(data);
+    const imageFile = { image: data.image[0] };
+    const res = await axiosPublic.post(image_hosting_api, imageFile, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+    console.log(res.data);
+    if (res.data.success) {
+      // now send the data to the server
+      const menuItem = {
+        name: data.name,
+        category: data.Category,
+        price: parseFloat(data.price),
+        recipe: data.recipe,
+        image: res.data.data.display_url,
+      };
+      const menuRes = await axiosSecure.post("/menu", menuItem);
+      if (menuRes.data.insertedId) {
+        toast.success(`Successfully added ${data.name}`);
+      } else {
+        toast.error("Failed to add item");
+      }
+      reset();
+    }
   };
   return (
     <div className="pl-10 pr-10">
@@ -19,7 +52,7 @@ const AddItems = () => {
         <fieldset className="fieldset ">
           <legend className="fieldset-legend ">Recipe Name*</legend>
           <input
-            {...register("Name", { required: true })}
+            {...register("name", { required: true })}
             type="text"
             className="input w-full my-5"
             placeholder="Recipe Name"
@@ -78,6 +111,7 @@ const AddItems = () => {
           Add Item <FaUtensils className="ml-4" />
         </button>
       </form>
+      <Toaster />
     </div>
   );
 };

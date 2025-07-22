@@ -32,7 +32,7 @@ const CardShare = ({ item }) => {
         if (res.data.insertedId) {
           toast.success("item Added to cart successfully");
           // refetch the card
-          refetch()
+          refetch();
         }
       });
     } else {
@@ -70,7 +70,9 @@ const CardShare = ({ item }) => {
           <div className="flex flex-col justify-between   flex-grow">
             <div>
               <h2 className="card-title mb-3">{name}</h2>
-              <p className="text">{recipe}</p>
+              <p className="text">
+                {recipe.length > 130 ? recipe.slice(0, 130) + "..." : recipe}
+              </p>
             </div>
             <div className="card-actions  mt-2  flex justify-center  ">
               <button
