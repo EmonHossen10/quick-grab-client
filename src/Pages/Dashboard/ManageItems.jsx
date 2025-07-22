@@ -5,6 +5,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { FaRegEdit, FaTruckLoading } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import { Link } from "react-router-dom";
 
 const ManageItems = () => {
   const [menu, loading, refetch] = useMenus();
@@ -44,7 +45,7 @@ const ManageItems = () => {
   return (
     <section>
       {loading ? (
-       <div className="flex w-full max-w-4xl flex-col gap-4 p-4">
+        <div className="flex w-full max-w-4xl flex-col gap-4 p-4">
           {/* Skeleton loader for full page */}
           <div className="skeleton h-48 w-full rounded-lg"></div>
           <div className="skeleton h-6 w-1/4"></div>
@@ -79,7 +80,7 @@ const ManageItems = () => {
                     <th>Item Image</th>
                     <th>Item Name</th>
                     <th>Price</th>
-                    <th>Edit</th>
+                    <th>Update</th>
                     <th>Delete</th>
                   </tr>
                 </thead>
@@ -104,9 +105,11 @@ const ManageItems = () => {
                       <td>{item.name}</td>
                       <td>${item.price}</td>
                       <th>
-                        <button>
-                          <FaRegEdit className="bg-[#D1A054] p-2  rounded text-4xl text-white cursor-pointer" />
-                        </button>
+                        <Link to={`/dashboard/updateItem/${item._id}`}>
+                          <button>
+                            <FaRegEdit className="bg-[#D1A054] p-2  rounded text-4xl text-white cursor-pointer" />
+                          </button>
+                        </Link>
                       </th>
                       <th>
                         <button onClick={() => handleDeleteItem(item)}>
