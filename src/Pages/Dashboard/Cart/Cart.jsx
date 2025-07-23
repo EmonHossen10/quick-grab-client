@@ -4,6 +4,7 @@ import DashboardTitle from "../../../Components/DashboardTitle";
 import { RiDeleteBin6Fill, RiDeleteBin6Line } from "react-icons/ri";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const [cart, refetch] = useCart();
@@ -58,12 +59,14 @@ const Cart = () => {
         <div className="flex justify-evenly pb-5 ">
           <h2 className="text-3xl">Total Order: {cart.length}</h2>
           <h2 className="text-3xl">Total Price: ${totalPrice}</h2>
-          <button
-            className="bg-[#d1a054] text-white py-2 px-4 rounded font-semibold 
+          <Link to="/dashboard/payment">
+            <button
+              className="bg-[#d1a054] text-white py-2 px-4 rounded font-semibold 
   transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg"
-          >
-            Pay
-          </button>
+            >
+              Pay
+            </button>
+          </Link>
         </div>
         {/* table here */}
         <div className="overflow-x-auto rounded-t-lg  ">
