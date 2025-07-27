@@ -240,7 +240,7 @@ const Dashboard = () => {
               }
             >
               <FaBagShopping />
-              Shop
+              Order Food
             </NavLink>
           </p>
           <p>
