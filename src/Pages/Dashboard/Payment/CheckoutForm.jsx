@@ -28,7 +28,7 @@ const CheckoutForm = () => {
   }, [axiosSecure, totalPrice]);
 
   const handleSubmit = async (event) => {
-    console.log("hit handle submit");
+    // console.log("hit handle submit");
     event.preventDefault();
     if (!stripe || !elements) {
       return;
@@ -70,6 +70,22 @@ const CheckoutForm = () => {
       if (paymentIntent.status === "succeeded") {
         toast.success(`Payment succeeded! Transaction ID: ${paymentIntent.id}`);
         setTransactionId(paymentIntent.id);
+
+        // now save the payment in the database
+        const payment = {
+          email: user.email,
+          price: totalPrice,
+          transactionId: paymentIntent.id,
+          date: new Date(), // utc date convert use moment js
+          cartId: cart.map((item) => item._id),
+          menuId: cart.map((item) => item.menuId),
+          status: "pending",
+        };
+        const res=await axiosSecure.post("/payments",payment);
+        console.log("payment saved",res);
+        if(res.data.insertedId){
+          toast.success("Payment successful");
+        }
       }
     }
   };
@@ -104,11 +120,11 @@ const CheckoutForm = () => {
         </div>
         <p className="text-red-500 font-bold ">{error}</p>
         {transactionId && (
-  <div className="flex items-center gap-2">
-    <span>Payment Id:</span>
-    <p className="text-green-500 font-bold m-0">{transactionId}</p>
-  </div>
-)}
+          <div className="flex items-center gap-2">
+            <span>Payment Id:</span>
+            <p className="text-green-500 font-bold m-0">{transactionId}</p>
+          </div>
+        )}
 
         <Toaster></Toaster>
       </form>
