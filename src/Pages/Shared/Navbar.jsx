@@ -5,10 +5,12 @@ import toast, { Toaster } from "react-hot-toast";
 import { FaShoppingCart } from "react-icons/fa";
 import useCart from "../../Hooks/useCart";
 import logo from "../../../public/asset/logo2.png"; // Assuming you have a logo image
+import useAdmin from "../../Hooks/UseAdmin";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [cart] = useCart();
+  const [isAdmin] = useAdmin();
   const handleLogout = () => {
     logOut()
       .then(() => {
@@ -84,7 +86,36 @@ const Navbar = () => {
       >
         Contact
       </NavLink>
-      <NavLink
+
+      {user && isAdmin && (
+        <NavLink
+          to="/dashboard/adminHome"
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "pending"
+              : isActive
+              ? "text-basic underline font-semibold  "
+              : "hover:text-basic hover:underline "
+          }
+        >
+          Admin Home
+        </NavLink>
+      )}
+      {user && !isAdmin && (
+        <NavLink
+          to="/dashboard/userHome"
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "pending"
+              : isActive
+              ? "text-basic underline font-semibold  "
+              : "hover:text-basic hover:underline "
+          }
+        >
+          User Home
+        </NavLink>
+      )}
+      {/* <NavLink
         to="/secret"
         className={({ isActive, isPending }) =>
           isPending
@@ -95,7 +126,7 @@ const Navbar = () => {
         }
       >
         Secret
-      </NavLink>
+      </NavLink> */}
 
       <Link to="/dashboard/cart">
         <div className="relative ">
