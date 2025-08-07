@@ -4,7 +4,7 @@ import Cover from "../../Shared/Cover";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import useMenus from "../../../Hooks/useMenus";
- 
+
 import OrderTab from "../OrderTab/OrderTab";
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
@@ -12,8 +12,8 @@ import { Helmet } from "react-helmet";
 const Order = () => {
   const categories = ["salad", "pizza", "soup", "dessert", "drinks"];
   const { category } = useParams();
-  const initialIndex=categories.indexOf(category);
-//   console.log(category,initialIndex)
+  const initialIndex = categories.indexOf(category);
+  //   console.log(category,initialIndex)
   const [tabIndex, setTabindex] = useState(initialIndex);
   const [menu] = useMenus();
   //  this params show ,which is in use in route ************
@@ -22,12 +22,12 @@ const Order = () => {
   const drinks = menu.filter((item) => item.category === "drinks");
   const dessert = menu.filter((item) => item.category === "dessert");
   const pizza = menu.filter((item) => item.category === "pizza");
-  const soup = menu.filter((item) => item.category === "salad");
+  const soup = menu.filter((item) => item.category === "soup");
   //   const offered = menu.filter((item) => item.category === "offered");
 
   return (
     <div>
-          <Helmet>
+      <Helmet>
         <title>Quick Grab | Order Food</title>
       </Helmet>
       <Cover
@@ -50,7 +50,7 @@ const Order = () => {
             <Tab>Drinks</Tab>
           </TabList>
           <TabPanel>
-            <OrderTab items={salad}></OrderTab> 
+            <OrderTab items={salad}></OrderTab>
           </TabPanel>
           <TabPanel>
             <OrderTab items={pizza}></OrderTab>
