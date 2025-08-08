@@ -6,9 +6,21 @@ import { FaDollarSign, FaUsers } from "react-icons/fa";
 import { MdOutlineRestaurantMenu } from "react-icons/md";
 import { TbTruckDelivery } from "react-icons/tb";
 
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from "recharts";
+import {
+  BarChart,
+  Bar,
+  Cell,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Pie,
+  PieChart,
+  ResponsiveContainer,
+  Legend,
+} from "recharts";
 
 const colors = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "red", "pink"];
+const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
 const AdminHome = () => {
   const { user } = useAuth();
@@ -49,6 +61,38 @@ const AdminHome = () => {
     return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
   };
 
+  // custom pie chart
+  const RADIAN = Math.PI / 180;
+
+  const renderCustomizedLabel = ({
+    cx,
+    cy,
+    midAngle,
+    innerRadius,
+    outerRadius,
+    percent,
+  }) => {
+    const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+    const x = cx + radius * Math.cos(-(midAngle ?? 0) * RADIAN);
+    const y = cy + radius * Math.sin(-(midAngle ?? 0) * RADIAN);
+
+    return (
+      <text
+        x={x}
+        y={y}
+        fill="white"
+        textAnchor={x > cx ? "start" : "end"}
+        dominantBaseline="central"
+      >
+        {`${((percent ?? 1) * 100).toFixed(0)}%`}
+      </text>
+    );
+  };
+
+  const pieChartData = chartData?.map((item) => ({
+    name: item.category,
+    value: item.revenue,
+  }));
   return (
     <>
       <h2 className="text-2xl font-bold mb-10 mt-3">
@@ -125,7 +169,28 @@ const AdminHome = () => {
             </Bar>
           </BarChart>
         </div>
-        <div className="w-1/2"> </div>
+        <div className="w-1/2">
+          <PieChart width={500} height={400}>
+            <Pie
+              data={pieChartData}
+              cx="50%"
+              cy="50%"
+              labelLine={false}
+              label={renderCustomizedLabel}
+              outerRadius={150}
+              fill="#8884d8"
+              dataKey="value"
+            >
+              {pieChartData?.map((entry, index) => (
+                <Cell
+                  key={`cell-${entry.name}`}
+                  fill={COLORS[index % COLORS.length]}
+                />
+              ))}
+            </Pie>
+            <Legend />
+          </PieChart>
+        </div>
       </div>
     </>
   );
