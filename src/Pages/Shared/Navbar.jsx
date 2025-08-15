@@ -61,18 +61,7 @@ const Navbar = () => {
         Order Food
       </NavLink>
 
-      <NavLink
-        to="/projects"
-        className={({ isActive, isPending }) =>
-          isPending
-            ? "pending"
-            : isActive
-            ? "text-basic underline font-semibold  "
-            : "hover:text-basic hover:underline "
-        }
-      >
-        Project
-      </NavLink>
+     
 
       <NavLink
         to="/contact"

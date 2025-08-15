@@ -19,6 +19,7 @@ import Payment from "../Pages/Dashboard/Payment/Payment";
 import PaymentHistory from "../Pages/Dashboard/PaymentHistory";
 import AdminHome from "../Pages/Dashboard/AdminHome";
 import UserHome from "../Pages/Dashboard/UserHome";
+import ContactPage from "../Pages/Contract/ContactPage";
 
 const router = createBrowserRouter([
   {
@@ -33,10 +34,7 @@ const router = createBrowserRouter([
         path: "/menu",
         element: <Menu></Menu>,
       },
-      // {
-      //   path: "/order/salad",
-      //   element: <Order></Order>,
-      // },
+       
       {
         path: "/order/:category",
         element: <Order></Order>,
@@ -48,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: "/sign-up",
         element: <SignUp></SignUp>,
+      },
+      {
+        path: "/contact",
+        element: <ContactPage></ContactPage>,
       },
       {
         path: "/secret",
