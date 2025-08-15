@@ -3,9 +3,12 @@ import useAuth from "../../Hooks/useAuth";
 import { FaEdit, FaSave, FaSpinner } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
+import UseAxiosPublic from "../../Hooks/UseAxiosPublic";
+import { useQuery } from "@tanstack/react-query";
 
 const UserHome = () => {
   const { user, updateUserProfile } = useAuth();
+  const axiosPublic = UseAxiosPublic();
 
   // Local state to reflect changes instantly
   const [localUser, setLocalUser] = useState(user);
@@ -14,6 +17,22 @@ const UserHome = () => {
   const [editName, setEditName] = useState(user?.displayName || "");
   const [editPhoto, setEditPhoto] = useState(user?.photoURL || "");
   const [loading, setLoading] = useState(false);
+
+  // loading some data
+  const { data: payments, isLoading, isError } = useQuery({
+  queryKey: ["payments", user?.email],
+  enabled: !!user?.email,
+  queryFn: async () => {
+    const token = localStorage.getItem("access-token");
+    const res = await axiosPublic.get(`/payments/${user.email}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    console.log("Payments Data:", res.data);
+    return res.data;
+  },
+});
 
   // Update localUser when user changes (on login or auth changes)
   useEffect(() => {
