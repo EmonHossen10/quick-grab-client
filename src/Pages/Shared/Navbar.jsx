@@ -115,18 +115,6 @@ const Navbar = () => {
           User Home
         </NavLink>
       )}
-      {/* <NavLink
-        to="/secret"
-        className={({ isActive, isPending }) =>
-          isPending
-            ? "pending"
-            : isActive
-            ? "text-basic underline font-semibold  "
-            : "hover:text-basic hover:underline "
-        }
-      >
-        Secret
-      </NavLink> */}
 
       <Link to="/dashboard/cart">
         <div className="relative ">
@@ -187,7 +175,7 @@ const Navbar = () => {
           )}
         </div>
         <div className="navbar-center hidden lg:flex py-0 lg:py-4 ">
-          <ul className="menu menu-horizontal gap-5 text-[22px] px-1">
+          <ul className="menu menu-horizontal gap-8 text-[22px] px-1">
             {navOptions}
           </ul>
         </div>
