@@ -1,5 +1,7 @@
 import React from "react";
 import useAuth from "../../Hooks/useAuth";
+import { Link } from "react-router-dom";
+import { FaEdit } from "react-icons/fa";
 
 const UserHome = () => {
   const { user } = useAuth();
@@ -32,12 +34,16 @@ const UserHome = () => {
 
         {/* Dashboard Buttons */}
         <div className="flex justify-center gap-4">
-          <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-4 rounded-lg transition">
-            My Orders
-          </button>
-          <button className="bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded-lg transition">
-            Settings
-          </button>
+          <Link to="/dashboard/cart">
+            <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-4 rounded-lg transition">
+              My Orders
+            </button>
+          </Link>
+          <Link>
+            <button className="bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded-lg transition flex items-center gap-2">
+              <FaEdit /> Edit
+            </button>
+          </Link>
         </div>
       </div>
     </div>
