@@ -20,11 +20,13 @@ import PaymentHistory from "../Pages/Dashboard/PaymentHistory";
 import AdminHome from "../Pages/Dashboard/AdminHome";
 import UserHome from "../Pages/Dashboard/UserHome";
 import ContactPage from "../Pages/Contract/ContactPage";
+import ErrorPage from "../Pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",

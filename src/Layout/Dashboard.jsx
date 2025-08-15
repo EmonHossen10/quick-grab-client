@@ -72,7 +72,7 @@ const Dashboard = () => {
                   Manage Items
                 </NavLink>
               </p>
-              <p>
+              {/* <p>
                 <NavLink
                   className={({ isActive }) =>
                     `flex flex-row gap-2 items-center   rounded-md transition-all duration-200 ${
@@ -86,7 +86,7 @@ const Dashboard = () => {
                   <TbBrandBooking />
                   Manage Bookings
                 </NavLink>
-              </p>
+              </p> */}
               <p>
                 <NavLink
                   className={({ isActive }) =>
