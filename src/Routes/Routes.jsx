@@ -26,7 +26,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
-     errorElement: <ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -36,7 +36,7 @@ const router = createBrowserRouter([
         path: "/menu",
         element: <Menu></Menu>,
       },
-       
+
       {
         path: "/order/:category",
         element: <Order></Order>,
@@ -136,7 +136,7 @@ const router = createBrowserRouter([
           </AdminRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/menu/${params.id}`),
+          fetch(`https://quick-grab-backend.vercel.app/menu/${params.id}`),
       },
     ],
   },
