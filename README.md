@@ -81,7 +81,7 @@ src/
 
 ```bash
 # Clone the repo
-git clone https://github.com/yourusername/quick-grab-frontend.git
+https://github.com/EmonHossen10/quick-grab-client.git
 
 # Navigate into the project folder
 cd quick-grab-frontend
