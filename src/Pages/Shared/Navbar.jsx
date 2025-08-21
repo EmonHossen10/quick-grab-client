@@ -61,8 +61,6 @@ const Navbar = () => {
         Order Food
       </NavLink>
 
-     
-
       <NavLink
         to="/contact"
         className={({ isActive, isPending }) =>
@@ -105,7 +103,15 @@ const Navbar = () => {
         </NavLink>
       )}
 
-      <Link to="/dashboard/cart">
+      <Link
+        to={
+          user
+            ? isAdmin
+              ? "/dashboard/adminHome"
+              : "/dashboard/cart"
+            : "/login"
+        }
+      >
         <div className="relative ">
           <span>
             <FaShoppingCart className="text-2xl" />
