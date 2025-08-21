@@ -1,6 +1,9 @@
-# 🚀 Quick Grab - Food Ordering Platform
 
-[![Live Site](https://img.shields.io/badge/Live_Site-Quick_Grab-8A2BE2)](https://quick-grab-frontend.vercel.app/)
+# 🚀 Quick Grab Frontend
+
+[![Live Site](https://img.shields.io/badge/Live_Site-Quick_Grab-8A2BE2?style=for-the-badge&logo=vercel)](https://quick-grab-frontend.vercel.app/)  
+
+
 
 A modern, full-stack service booking application built with React. Quick Grab seamlessly connects users with local service providers, offering an intuitive experience from discovery to secure payment.
 
