@@ -1,14 +1,15 @@
 
 # 🚀 Quick Grab Frontend
 
-[![Live Site](https://img.shields.io/badge/Live_Site-Quick_Grab-8A2BE2?style=for-the-badge&logo=vercel)](https://quick-grab-frontend.vercel.app/)  
+[![Live Site](https://img.shields.io/badge/Live_Site-Quick_Grab-8A2BE2?style=for-the-badge&logo=vercel)](https://quick-grab-frontend.vercel.app/)
 
+A modern, full-stack food ordering and delivery application built with React. Quick Grab connects users with local restaurants, providing an intuitive experience from browsing menus to secure online payment.
 
+## 🎨 UI / UX Mockups
 
-A modern, full-stack service booking application built with React. Quick Grab seamlessly connects users with local service providers, offering an intuitive experience from discovery to secure payment.
-
-![Quick Grab Mockup](https://via.placeholder.com/800x400/8A2BE2/FFFFFF?text=Quick+Grab+App+Preview) 
-*Replace with an actual screenshot or GIF of your application*
+![Quick Grab Home](https://i.ibb.co.com/zhTKKjZ7/1.png)  
+![Quick Grab User Home](https://i.ibb.co.com/N2g5rcZZ/2.png)  
+![Quick Grab Admin Home](https://i.ibb.co.com/xty4JS7q/3.png)
 
 ---
 
